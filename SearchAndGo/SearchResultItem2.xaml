@@ -1,0 +1,18 @@
+﻿<UserControl x:Class="SearchAndGo.SearchResultItem2"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:s="http://schemas.microsoft.com/surface/2008"
+             mc:Ignorable="d" 
+             
+             d:DesignHeight="220" d:DesignWidth="140">
+    <Grid MaxHeight="120" MaxWidth="140">
+        <StackPanel Name="mainStackPanel" Margin="0,8,8,8" HorizontalAlignment="Left">
+            <Button Name="mainButton" Height="120" Width="140"/>
+        </StackPanel>
+        <Label Name="itemName" Content="name" Margin="138,8,-122,0" />
+        <Label Name="itemDescription" Margin="138,38,-122,0" />
+        <Label Name="price" Margin="138,80,-138,0" />
+    </Grid>
+</UserControl>
