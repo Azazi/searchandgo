@@ -60,3 +60,17 @@ C:\Users\Alaa\Documents\GitHub\CPSC-481\UIControls\obj\Debug\SearchAndGo.Propert
 C:\Users\Alaa\Documents\GitHub\CPSC-481\UIControls\obj\Debug\SearchTextBox.csproj.GenerateResource.Cache
 C:\Users\Alaa\Documents\GitHub\CPSC-481\UIControls\obj\Debug\SearchTextBox.dll
 C:\Users\Alaa\Documents\GitHub\CPSC-481\UIControls\obj\Debug\SearchTextBox.pdb
+C:\Users\aselab\Developer\CPSC-481\UIControls\bin\Debug\SearchTextBox.dll
+C:\Users\aselab\Developer\CPSC-481\UIControls\bin\Debug\SearchTextBox.pdb
+C:\Users\aselab\Developer\CPSC-481\UIControls\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\aselab\Developer\CPSC-481\UIControls\obj\Debug\Themes\ListBoxEx.baml
+C:\Users\aselab\Developer\CPSC-481\UIControls\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\aselab\Developer\CPSC-481\UIControls\obj\Debug\SearchTextBox_MarkupCompile.cache
+C:\Users\aselab\Developer\CPSC-481\UIControls\obj\Debug\SearchTextBox_MarkupCompile.lref
+C:\Users\aselab\Developer\CPSC-481\UIControls\obj\Debug\Themes\Generic.baml
+C:\Users\aselab\Developer\CPSC-481\UIControls\obj\Debug\SearchTextBox.g.resources
+C:\Users\aselab\Developer\CPSC-481\UIControls\obj\Debug\SearchAndGo.Properties.Resources.resources
+C:\Users\aselab\Developer\CPSC-481\UIControls\obj\Debug\ResGen.read.1.tlog
+C:\Users\aselab\Developer\CPSC-481\UIControls\obj\Debug\ResGen.write.1.tlog
+C:\Users\aselab\Developer\CPSC-481\UIControls\obj\Debug\SearchTextBox.dll
+C:\Users\aselab\Developer\CPSC-481\UIControls\obj\Debug\SearchTextBox.pdb

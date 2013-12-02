@@ -19,16 +19,21 @@ namespace SearchAndGo
     /// </summary>
     public partial class SearchResultItem : UserControl
     {
-        Image backgroundImage;
-        public SearchResultItem(string name, Image image)
+        public Image backgroundImage;
+        public string category;
+        public string brand;
+        public string price;
+        public string name;
+        public string rawName;
+
+        public SearchResultItem(Image image)
         {
             InitializeComponent();
             backgroundImage = image;
-            mainButton.Background = new ImageBrush(backgroundImage.Source);
-            //mainButton.Content = name;
-            //itemDescription.Content = "item description";
-            itemName.Content = name;
+            parseName(image.Source.ToString().Split('/').Last());
 
+            itemName.Content = this.name;
+            mainButton.Content = backgroundImage;
             mainButton.Click += new RoutedEventHandler(mainButton_Click);
         }
 
@@ -38,5 +43,23 @@ namespace SearchAndGo
             itemWindow.Show();
         }
 
+        //Name of images should be in the following format
+        //category-brand-price-name.jpg
+        public void parseName(string rawName)
+        {
+            this.rawName = rawName.Split('.')[0];
+            try
+            {
+                string[] nameSplitByDashes = rawName.Split('-');
+                this.category = nameSplitByDashes[0].ToLower();
+                this.brand = nameSplitByDashes[1].ToLower();
+                this.price = nameSplitByDashes[2];
+                this.name = nameSplitByDashes[3].Split('.')[0].ToLower();
+            }
+            catch (Exception e)
+            {
+                Console.Error.WriteLine("In SeachResultItem.xaml.cs line 55" + e.Message);
+            }
+        }
     }
 }

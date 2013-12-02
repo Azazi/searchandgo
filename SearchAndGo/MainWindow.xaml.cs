@@ -33,9 +33,13 @@ namespace SearchAndGo
         /// </summary>
 
         public Banner banner;
+        public Window current;
+        public static WrapPanel displayArea;
+        public string searchString;
         public MainWindow()
         {
             InitializeComponent();
+            displayArea = SearchResultsStackPanel;
 
             // Setup the banner
             setupBanner();
@@ -45,11 +49,19 @@ namespace SearchAndGo
 
             Help_Button.Click += new RoutedEventHandler(Help_Button_Click);
 
+            //searchBar.OnSearch += new RoutedEventHandler(m_txtTest_OnSearch);
+
             // Add handlers for window availability events
             AddWindowAvailabilityHandlers();
         }
 
-        void Help_Button_Click(object sender, RoutedEventArgs e)
+        public static WrapPanel getMain()
+        {
+            return displayArea;
+        }
+
+
+        public void Help_Button_Click(object sender, RoutedEventArgs e)
         {
             HelpPage helpPage = new HelpPage();
             helpPage.Show();
@@ -85,172 +97,85 @@ namespace SearchAndGo
             banner.start();
         }
 
-        void addCategories()
+        private void addCategories()
         {
             this.Dispatcher.Invoke((Action)(() =>
             {
-                // Document
-                ImageSource categorySource = (ImageSource)new ImageSourceConverter().ConvertFromString(@"..\..\Resources\Images\hockey.jpg");
-                Image categoryImage = new Image();
-                categoryImage.Source = categorySource;
-                SearchResultItem newItem = new SearchResultItem("Hockey", categoryImage);
-                SearchResultsStackPanel.Children.Add(newItem);
+                //displayInContentArea(new CategoryBrowser(fakeDataBaseQuery("hockey").First()));
+                //displayInContentArea(new CategoryBrowser(fakeDataBaseQuery("apparel").First()));
+                //displayInContentArea(new CategoryBrowser(fakeDataBaseQuery("backpack").First()));
+                //displayInContentArea(new CategoryBrowser(fakeDataBaseQuery("jacket").First()));
+                //displayInContentArea(new CategoryBrowser(fakeDataBaseQuery("skates").First()));
+                //displayInContentArea(new CategoryBrowser(fakeDataBaseQuery("fanshop").First()));
+                //displayInContentArea(new CategoryBrowser(fakeDataBaseQuery("basketball").First()));
+                //displayInContentArea(new CategoryBrowser(fakeDataBaseQuery("sneakers").First()));
 
-                categorySource = (ImageSource)new ImageSourceConverter().ConvertFromString(@"..\..\Resources\Images\apparel.jpg");
-                categoryImage = new Image();
-                categoryImage.Source = categorySource;
-                newItem = new SearchResultItem("Apparel", categoryImage);
-                SearchResultsStackPanel.Children.Add(newItem);
-
-                categorySource = (ImageSource)new ImageSourceConverter().ConvertFromString(@"..\..\Resources\Images\backpack.jpg");
-                categoryImage = new Image();
-                categoryImage.Source = categorySource;
-                newItem = new SearchResultItem("Outdoors", categoryImage);
-                SearchResultsStackPanel.Children.Add(newItem);
-
-                categorySource = (ImageSource)new ImageSourceConverter().ConvertFromString(@"..\..\Resources\Images\jacket.jpg");
-                categoryImage = new Image();
-                categoryImage.Source = categorySource;
-                newItem = new SearchResultItem("Jackets", categoryImage);
-                SearchResultsStackPanel.Children.Add(newItem);
-
-                categorySource = (ImageSource)new ImageSourceConverter().ConvertFromString(@"..\..\Resources\Images\skates.jpg");
-                categoryImage = new Image();
-                categoryImage.Source = categorySource;
-                newItem = new SearchResultItem("Skating", categoryImage);
-                SearchResultsStackPanel.Children.Add(newItem);
-
-                categorySource = (ImageSource)new ImageSourceConverter().ConvertFromString(@"..\..\Resources\Images\sneakers.jpg");
-                categoryImage = new Image();
-                categoryImage.Source = categorySource;
-                newItem = new SearchResultItem("Footwear", categoryImage);
-                SearchResultsStackPanel.Children.Add(newItem);
-
-                categorySource = (ImageSource)new ImageSourceConverter().ConvertFromString(@"..\..\Resources\Images\fanshop.jpg");
-                categoryImage = new Image();
-                categoryImage.Source = categorySource;
-                newItem = new SearchResultItem("Fan Shop", categoryImage);
-                SearchResultsStackPanel.Children.Add(newItem);
-
-                categorySource = (ImageSource)new ImageSourceConverter().ConvertFromString(@"..\..\Resources\Images\basketball.jpg");
-                categoryImage = new Image();
-                categoryImage.Source = categorySource;
-                newItem = new SearchResultItem("Basketball", categoryImage);
-                SearchResultsStackPanel.Children.Add(newItem);
-            }));
-        }
-
-        void addNike()
-        {
-            this.Dispatcher.Invoke((Action)(() =>
-            {
-                ImageSource categorySource = (ImageSource)new ImageSourceConverter().ConvertFromString(@"..\..\Resources\Images\Nike\i1.jpg");
-                Image categoryImage = new Image();
-                categoryImage.Source = categorySource;
-                SearchResultItem newItem = new SearchResultItem("Nike Zoom Stefan", categoryImage);
-                SearchResultsStackPanel.Children.Add(newItem);
-
-                categorySource = (ImageSource)new ImageSourceConverter().ConvertFromString(@"..\..\Resources\Images\Nike\i2.jpg");
-                categoryImage = new Image();
-                categoryImage.Source = categorySource;
-                newItem = new SearchResultItem("Nike Dunk Mid", categoryImage);
-                SearchResultsStackPanel.Children.Add(newItem);
-
-                categorySource = (ImageSource)new ImageSourceConverter().ConvertFromString(@"..\..\Resources\Images\Nike\i3.jpg");
-                categoryImage = new Image();
-                categoryImage.Source = categorySource;
-                newItem = new SearchResultItem("Nike SB Lunar", categoryImage);
-                SearchResultsStackPanel.Children.Add(newItem);
-
-                categorySource = (ImageSource)new ImageSourceConverter().ConvertFromString(@"..\..\Resources\Images\Nike\i4.jpg");
-                categoryImage = new Image();
-                categoryImage.Source = categorySource;
-                newItem = new SearchResultItem("Nike SB Januski", categoryImage);
-                SearchResultsStackPanel.Children.Add(newItem);
-
-                categorySource = (ImageSource)new ImageSourceConverter().ConvertFromString(@"..\..\Resources\Images\Nike\i5.jpg");
-                categoryImage = new Image();
-                categoryImage.Source = categorySource;
-                newItem = new SearchResultItem("Nike Project BA", categoryImage);
-                SearchResultsStackPanel.Children.Add(newItem);
-            }));
-        }
-
-        #region searchBar
-        void m_txtTest_OnSearch(object sender, RoutedEventArgs e)
-        {
-            SearchEventArgs searchArgs = e as SearchEventArgs;
-            
-            // Display search data
-            string sections = "\r\nSections(s): ";
-            foreach (string section in searchArgs.Sections)
-                sections += (section + "; ");
-            //m_txtSearchContent.Text = "Keyword: " + searchArgs.Keyword + sections;
-
-            List<Image> result = fakeDataBaseQuery(searchArgs.Keyword);
-            List<SearchAndGo.SearchResultItem> displayOfResults = new List<SearchAndGo.SearchResultItem>();
-
-            foreach (Image currResult in result)
-            {
-                displayOfResults.Add(new SearchResultItem(currResult.Source.ToString().Split('/').Last(), currResult));
-            }
-
-            foreach (SearchResultItem item in displayOfResults)
-            {
-                SearchResultsStackPanel.Children.Add(item);    
-            }
-
-            
-        }
-
-        private List<Image> fakeDataBaseQuery(string query)
-        {
-            string actualQuery = query.ToLower();
-            //actualQuery = actualQuery + ".jpg";
-
-            List<Image> imgagesOfAllItems = GetImagesFromFile();
-            List<Image> resultQuery = new List<Image>();
-
-            foreach (Image currImage in imgagesOfAllItems)
-            {
-                 string currentImageName = currImage.Source.ToString().Split('/').Last();
-                 if (currentImageName.Contains(actualQuery))
-                 {
-                     resultQuery.Add(currImage);
-                 }
-            }
-
-
-            return resultQuery;
-        }
-
-        private List<Image> GetImagesFromFile(string directory = @"../../Resources/Images/SearchItems")
-        {
-            //get all the images in the images folder
-            List<Image> imageList = new List<Image>();
-            List<ImageSource> sourceList = new List<ImageSource>();
-
-            DirectoryInfo dir = new DirectoryInfo(directory);
-            FileInfo[] files = dir.GetFiles();
-
-            foreach (var item in files)
-            {
-                if (item.Extension == ".jpeg" || item.Extension == ".jpg" || item.Extension == ".png")
+                List<string> allCat = FakeDB.getAllCategories();
+                List<CategoryBrowser> listOfallCategories = new List<CategoryBrowser>();
+                foreach (string category in allCat)
                 {
-                    Image img = new Image();
-                    img.Source = (ImageSource)new ImageSourceConverter().ConvertFromString(item.FullName);
-                    imageList.Add(img);
-                    sourceList.Add(img.Source);
+                    SearchResultItem anItem = FakeDB.fakeDataBaseQuery(category).First();
+                    CategoryBrowser aCategory = new CategoryBrowser(anItem);
+                    listOfallCategories.Add(aCategory);
                 }
-            }
-            return imageList;
+                DisplayToMainView.displayInContentArea(displayArea, listOfallCategories);
+            }));
         }
 
-        private void searchBar_Loaded(object sender, RoutedEventArgs e)
+        private void addNike()
         {
-            //searchBar.Width = this.Width - 640; //640 = the size of sport chek logo + languange logo + help logo
+            this.Dispatcher.Invoke((Action)(() =>
+            {
+                //ImageSource categorySource = (ImageSource)new ImageSourceConverter().ConvertFromString(@"..\..\Resources\Images\Nike\i1.jpg");
+                //Image categoryImage = new Image();
+                //categoryImage.Source = categorySource;
+                //SearchResultItem newItem = new SearchResultItem("Nike Zoom Stefan", categoryImage);
+                //SearchResultsStackPanel.Children.Add(newItem);
+
+                //categorySource = (ImageSource)new ImageSourceConverter().ConvertFromString(@"..\..\Resources\Images\Nike\i2.jpg");
+                //categoryImage = new Image();
+                //categoryImage.Source = categorySource;
+                //newItem = new SearchResultItem("Nike Dunk Mid", categoryImage);
+                //SearchResultsStackPanel.Children.Add(newItem);
+
+                //categorySource = (ImageSource)new ImageSourceConverter().ConvertFromString(@"..\..\Resources\Images\Nike\i3.jpg");
+                //categoryImage = new Image();
+                //categoryImage.Source = categorySource;
+                //newItem = new SearchResultItem("Nike SB Lunar", categoryImage);
+                //SearchResultsStackPanel.Children.Add(newItem);
+
+                //categorySource = (ImageSource)new ImageSourceConverter().ConvertFromString(@"..\..\Resources\Images\Nike\i4.jpg");
+                //categoryImage = new Image();
+                //categoryImage.Source = categorySource;
+                //newItem = new SearchResultItem("Nike SB Januski", categoryImage);
+                //SearchResultsStackPanel.Children.Add(newItem);
+
+                //categorySource = (ImageSource)new ImageSourceConverter().ConvertFromString(@"..\..\Resources\Images\Nike\i5.jpg");
+                //categoryImage = new Image();
+                //categoryImage.Source = categorySource;
+                //newItem = new SearchResultItem("Nike Project BA", categoryImage);
+                //SearchResultsStackPanel.Children.Add(newItem);
+            }));
         }
-        #endregion
+
+        private void MainSearchBar_IsKeyboardFocusWithinChanged(object sender, DependencyPropertyChangedEventArgs e)
+        {
+            MainSearchBar.Text = "";
+        }
+
+        private void MainSearchBar_KeyDown(object sender, KeyEventArgs e)
+        {
+            searchString = MainSearchBar.Text;
+            if (e.Key == Key.Enter)
+            {
+                DisplayToMainView.displayInContentArea(displayArea, FakeDB.fakeDataBaseQuery(MainSearchBar.Text));
+            }
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            DisplayToMainView.displayInContentArea(displayArea, FakeDB.fakeDataBaseQuery(searchString));
+        }
 
         #region Automatically Generated Code
         /// <summary>
@@ -320,6 +245,5 @@ namespace SearchAndGo
         }
 
         #endregion
-
     }
 }

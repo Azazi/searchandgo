@@ -1,15 +1,17 @@
-﻿<UserControl x:Class="SearchAndGo.Banner"
-             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             mc:Ignorable="d" 
-             Name="mainWindow"
-             d:DesignHeight="300" d:DesignWidth="1300">
+﻿<UserControl 
+    x:Class="SearchAndGo.Banner"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+    mc:Ignorable="d" 
+    Name="mainWindow"
+    d:DesignHeight="300" d:DesignWidth="1300"
+    >
     <Grid Name="bannerGrid" MaxHeight="300" MaxWidth="1300">
         <StackPanel Name="adsStackPanel" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-        <Button Name="leftButton" HorizontalAlignment="Left" VerticalAlignment="Center" Content="Previous" Height="300" Width="50" Background="#FF333333" Foreground="White" />
-        <Button Name="rightButton" HorizontalAlignment="Right" VerticalAlignment="Center" Content="Next" Height="300" Width="50" Background="#FF333333" Foreground="White" />
+        <Button Name="leftButton" HorizontalAlignment="Left" VerticalAlignment="Center" Content='&lt;' Height="300" Width="50" Background="#FF333333" Foreground="White" />
+        <Button Name="rightButton" HorizontalAlignment="Right" VerticalAlignment="Center" Content=">" Height="300" Width="50" Background="#FF333333" Foreground="White" />
         <StackPanel Name="radioButtonsStackPanel" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Bottom"/>       
     </Grid>
 </UserControl>

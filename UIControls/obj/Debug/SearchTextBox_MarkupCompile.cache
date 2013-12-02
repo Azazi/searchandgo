@@ -4,7 +4,7 @@
 library
 C#
 .cs
-C:\Users\Alaa\Documents\GitHub\CPSC-481\UIControls\obj\Debug\
+C:\Users\aselab\Developer\CPSC-481\UIControls\obj\Debug\
 SearchAndGo
 none
 false
@@ -15,6 +15,4 @@ DEBUG;TRACE
 5-337861816
 12-755963768
 Themes\ListBoxEx.xaml;Themes\Generic.xaml;
-
-False
 

@@ -73,6 +73,11 @@
     <Compile Include="Banner.xaml.cs">
       <DependentUpon>Banner.xaml</DependentUpon>
     </Compile>
+    <Compile Include="CategoryBrowser.xaml.cs">
+      <DependentUpon>CategoryBrowser.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DisplayToMainView.cs" />
+    <Compile Include="FakeDB.cs" />
     <Compile Include="FindAtOtherLocation.xaml.cs">
       <DependentUpon>FindAtOtherLocation.xaml</DependentUpon>
     </Compile>
@@ -142,14 +147,6 @@
     <Resource Include="Resources\Images\Sport_chek_logo.jpeg" />
     <Resource Include="Resources\Images\FlagFR.png" />
     <Resource Include="Resources\Images\HelpButton.jpg" />
-    <Resource Include="Resources\Images\SearchItems\glove1.jpg" />
-    <Resource Include="Resources\Images\SearchItems\jacket1.jpg" />
-    <Resource Include="Resources\Images\SearchItems\pant1.jpg" />
-    <Resource Include="Resources\Images\SearchItems\shoe1.jpg" />
-    <Resource Include="Resources\Images\SearchItems\shoe2.jpg" />
-    <Resource Include="Resources\Images\SearchItems\shoe3.jpg" />
-    <Resource Include="Resources\Images\SearchItems\shoe4.jpg" />
-    <Resource Include="Resources\Images\SearchItems\shoe5.jpg" />
     <Resource Include="Resources\Images\SportCheckLogo.gif" />
     <Resource Include="Resources\Images\x.png" />
     <Resource Include="Resources\Images\map.png" />
@@ -163,6 +160,10 @@
     <Page Include="Banner.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CategoryBrowser.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="FindAtOtherLocation.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -198,10 +199,7 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\UIControls\SearchTextBox.csproj">
-      <Project>{A3082956-9EE4-4B35-9B4E-B07D0C4C8B56}</Project>
-      <Name>SearchTextBox</Name>
-    </ProjectReference>
+    <Folder Include="Resources\Images\SearchItems\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\Expression\Blend\.NETFramework\v4.0\Microsoft.Expression.Blend.WPF.targets" />
