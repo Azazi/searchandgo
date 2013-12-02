@@ -25,7 +25,9 @@ namespace SearchAndGo
             InitializeComponent();
             containedItem = anItem;
             categoryName.Content = anItem.category;
-            categoryButton.Content = new ImageBrush(anItem.backgroundImage.Source);
+            Image im = new Image();
+            im.Source = anItem.backgroundImage.Source;
+            categoryButton.Content = im;
             categoryButton.Click += new RoutedEventHandler(mainButton_Click);
         }
 

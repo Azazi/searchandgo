@@ -14,7 +14,6 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.IO;
-
 #endregion
 
 namespace SearchAndGo
@@ -27,7 +26,6 @@ namespace SearchAndGo
         /// <summary>
         /// Default constructor.
         /// </summary>
-
         public Banner banner;
         public Window current;
         public static WrapPanel displayArea;
@@ -44,8 +42,17 @@ namespace SearchAndGo
             addCategories();
 
             Help_Button.Click += new RoutedEventHandler(Help_Button_Click);
+            this.KeyDown += new KeyEventHandler(MainWindow_KeyDown);
 
             //searchBar.OnSearch += new RoutedEventHandler(m_txtTest_OnSearch);
+        }
+
+        void MainWindow_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.LWin || e.Key == Key.RWin) 
+            {
+                MessageBox.Show("Windows button should be disabled so users can't exit the program!!!");
+            }
         }
 
         public static WrapPanel getMain()
