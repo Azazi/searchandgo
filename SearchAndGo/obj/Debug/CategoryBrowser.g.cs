@@ -9,12 +9,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-using Microsoft.Surface.Presentation;
-using Microsoft.Surface.Presentation.Controls;
-using Microsoft.Surface.Presentation.Controls.Primitives;
-using Microsoft.Surface.Presentation.Controls.TouchVisualizations;
-using Microsoft.Surface.Presentation.Input;
-using Microsoft.Surface.Presentation.Palettes;
 using System;
 using System.Diagnostics;
 using System.Windows;

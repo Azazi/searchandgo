@@ -13,10 +13,6 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using Microsoft.Surface;
-using Microsoft.Surface.Presentation;
-using Microsoft.Surface.Presentation.Controls;
-using Microsoft.Surface.Presentation.Input;
 using System.Drawing;
 
 #endregion
@@ -155,10 +151,6 @@ namespace SearchAndGo
         /// </summary>
         private void AddWindowAvailabilityHandlers()
         {
-            // Subscribe to surface window availability events
-            ApplicationServices.WindowInteractive += OnWindowInteractive;
-            ApplicationServices.WindowNoninteractive += OnWindowNoninteractive;
-            ApplicationServices.WindowUnavailable += OnWindowUnavailable;
         }
 
         /// <summary>
@@ -166,10 +158,6 @@ namespace SearchAndGo
         /// </summary>
         private void RemoveWindowAvailabilityHandlers()
         {
-            // Unsubscribe from surface window availability events
-            ApplicationServices.WindowInteractive -= OnWindowInteractive;
-            ApplicationServices.WindowNoninteractive -= OnWindowNoninteractive;
-            ApplicationServices.WindowUnavailable -= OnWindowUnavailable;
         }
 
         /// <summary>

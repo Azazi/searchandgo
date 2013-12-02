@@ -13,10 +13,6 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using Microsoft.Surface;
-using Microsoft.Surface.Presentation;
-using Microsoft.Surface.Presentation.Controls;
-using Microsoft.Surface.Presentation.Input;
 using System.IO;
 
 #endregion
@@ -50,9 +46,6 @@ namespace SearchAndGo
             Help_Button.Click += new RoutedEventHandler(Help_Button_Click);
 
             //searchBar.OnSearch += new RoutedEventHandler(m_txtTest_OnSearch);
-
-            // Add handlers for window availability events
-            AddWindowAvailabilityHandlers();
         }
 
         public static WrapPanel getMain()
@@ -185,31 +178,6 @@ namespace SearchAndGo
         protected override void OnClosed(EventArgs e)
         {
             base.OnClosed(e);
-
-            // Remove handlers for window availability events
-            RemoveWindowAvailabilityHandlers();
-        }
-
-        /// <summary>
-        /// Adds handlers for window availability events.
-        /// </summary>
-        private void AddWindowAvailabilityHandlers()
-        {
-            // Subscribe to surface window availability events
-            ApplicationServices.WindowInteractive += OnWindowInteractive;
-            ApplicationServices.WindowNoninteractive += OnWindowNoninteractive;
-            ApplicationServices.WindowUnavailable += OnWindowUnavailable;
-        }
-
-        /// <summary>
-        /// Removes handlers for window availability events.
-        /// </summary>
-        private void RemoveWindowAvailabilityHandlers()
-        {
-            // Unsubscribe from surface window availability events
-            ApplicationServices.WindowInteractive -= OnWindowInteractive;
-            ApplicationServices.WindowNoninteractive -= OnWindowNoninteractive;
-            ApplicationServices.WindowUnavailable -= OnWindowUnavailable;
         }
 
         /// <summary>
