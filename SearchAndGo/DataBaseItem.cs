@@ -19,6 +19,16 @@ namespace SearchAndGo
         private string _name;
 
         /// <summary>
+        /// Product Price
+        /// </summary>
+        public double Price
+        {
+            set { this._price = value; }
+            get { return this._price; }
+        }
+        private double _price;
+
+        /// <summary>
         /// Product Departments
         /// </summary>
         public List<string> Departments = new List<string>();
@@ -82,6 +92,7 @@ namespace SearchAndGo
         /// Constructor
         /// </summary>
         /// <param name="name">Product name</param>
+        /// <param name="price">Product price</param>
         /// <param name="department">List of departments</param>
         /// <param name="brand">Product brand</param>
         /// <param name="colors">Available colors</param>
@@ -90,7 +101,8 @@ namespace SearchAndGo
         /// <param name="productInfo">Product information</param>
         /// <param name="image">Product image</param>
         /// <param name="reviews">Product reviews</param>
-        public DataBaseItem(string name, 
+        public DataBaseItem(string name,
+                            double price,
                             string department, 
                             string brand, 
                             List<string> colors, 
@@ -101,6 +113,7 @@ namespace SearchAndGo
                             List<ReviewItem> reviews)
         {
             this._name = name;
+            this._price = price;
             Departments.Add(department);
             this._brand = brand;
             foreach (string color in colors){Colors.Add(color);}

@@ -17,24 +17,12 @@ namespace SearchAndGo
 	/// </summary>
 	public partial class ItemWindow : Window
 	{
-		public ItemWindow()
-		{
-			this.InitializeComponent();
-			
-			// Insert code required on object creation below this point.
-
-            Window.Deactivated += new EventHandler(Window_Deactivated);
-
-            findInStoreButton.Click += new RoutedEventHandler(findInStoreButton_Click);
-            seeOtherLocationsButton.Click += new RoutedEventHandler(seeOtherLocationsButton_Click);
-            addNike();
-		}
+        FindAtOtherLocation findAtOtherLocation = new FindAtOtherLocation();
+        FindInStoreWindow findInStoreWindow = new FindInStoreWindow();
 
         public ItemWindow(Image image)
         {
             this.InitializeComponent();
-
-            // Insert code required on object creation below this point.
 
             productImage.Source = image.Source;
 
@@ -47,18 +35,19 @@ namespace SearchAndGo
 
         void Window_Deactivated(object sender, EventArgs e)
         {
-            this.Hide();
+            if(!findAtOtherLocation.IsVisible && !findInStoreWindow.IsVisible)
+                this.Hide();
         }
 
         void seeOtherLocationsButton_Click(object sender, RoutedEventArgs e)
         {
-            FindAtOtherLocation findAtOtherLocation = new FindAtOtherLocation();
+            findAtOtherLocation = new FindAtOtherLocation();
             findAtOtherLocation.Show();
         }
 
         void findInStoreButton_Click(object sender, RoutedEventArgs e)
         {
-            FindInStoreWindow findInStoreWindow = new FindInStoreWindow();
+            findInStoreWindow = new FindInStoreWindow();
             findInStoreWindow.Show();
         }
 
