@@ -76,11 +76,6 @@ namespace SearchAndGo
             }));
         }
 
-        //private void MainSearchBar_IsKeyboardFocusWithinChanged(object sender, DependencyPropertyChangedEventArgs e)
-        //{
-        //    searchBar.Text = "";
-        //}
-
         private void MainSearchBar_KeyDown(object sender, KeyEventArgs e)
         {
             searchString = searchBar.Text;

@@ -32,7 +32,7 @@ namespace SearchAndGo
             backgroundImage = image;
             parseName(image.Source.ToString().Split('/').Last());
 
-            itemName.Content = this.name;
+            itemName.Content = this.name.ToUpper();
             mainButton.Content = backgroundImage;
             mainButton.Click += new RoutedEventHandler(mainButton_Click);
         }

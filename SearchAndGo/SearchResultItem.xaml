@@ -10,7 +10,8 @@
     >
     <Grid MaxHeight="220" MaxWidth="140">
         <StackPanel Name="mainStackPanel" Margin="8,8,8,8">
-            <Button Name="mainButton" Height="120" Width="140"/>
+            <Button Name="mainButton" Height="120"/>
+            <Label Name="itemPrice" Content="Our Price $34.98" FontWeight="Bold" />
             <Label Name="itemName" Content="name"/>
             <Label Name="itemDescription"/>
         </StackPanel>
