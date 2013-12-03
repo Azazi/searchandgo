@@ -48,7 +48,7 @@
         		<Setter.Value>
         			<ControlTemplate TargetType="{x:Type Button}">
         				<Grid>
-        					<Rectangle Fill="#FF333333" RadiusY="8" RadiusX="8" Stroke="#FF333333" StrokeThickness="2"/>
+        					<Rectangle Fill="#FF333333" RadiusY="0" RadiusX="0" Stroke="#FF333333" StrokeThickness="2"/>
         					<ContentPresenter HorizontalAlignment="Stretch" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" Margin="39.712,15.76,9.024,14.76" VerticalAlignment="Stretch" Height="Auto" Width="Auto"/>
         				</Grid>
         				<ControlTemplate.Triggers>
@@ -102,7 +102,7 @@
     			<Setter.Value>
     				<ControlTemplate TargetType="{x:Type ToggleButton}">
     					<Microsoft_Windows_Themes:ButtonChrome x:Name="Chrome" BorderBrush="{TemplateBinding BorderBrush}" Background="{TemplateBinding Background}" RenderMouseOver="{TemplateBinding IsMouseOver}" RenderPressed="{TemplateBinding IsPressed}" SnapsToDevicePixels="true">
-    						<Grid HorizontalAlignment="Right" Width="{DynamicResource {x:Static SystemParameters.VerticalScrollBarWidthKey}}">
+    						<Grid HorizontalAlignment="Right" Width="{DynamicResource {x:Static SystemParameters.VerticalScrollBarWidthKey}}" Visibility="Visible" ScrollViewer.VerticalScrollBarVisibility="Visible">
     							<Path x:Name="Arrow" Data="{StaticResource DownArrowGeometry}" Fill="White" HorizontalAlignment="Center" Margin="3,1,0,0" VerticalAlignment="Center"/>
     						</Grid>
     					</Microsoft_Windows_Themes:ButtonChrome>
@@ -240,7 +240,7 @@
     								<VisualState x:Name="Disabled"/>
     							</VisualStateGroup>
     						</VisualStateManager.VisualStateGroups>
-    						<Rectangle Fill="#FF333333" Margin="0,0,-17,0" RadiusY="8" RadiusX="8" Stroke="#FF333333" StrokeThickness="2" Grid.ColumnSpan="2"/>
+    						<Rectangle Fill="#FF333333" Margin="0,0,-17,0" RadiusY="0" RadiusX="0" Stroke="#FF333333" StrokeThickness="2" Grid.ColumnSpan="2"/>
     						<Popup x:Name="PART_Popup" AllowsTransparency="true" Grid.ColumnSpan="2" IsOpen="{Binding IsDropDownOpen, RelativeSource={RelativeSource TemplatedParent}}" Margin="12.879,4.164,5.879,4.879" PopupAnimation="{DynamicResource {x:Static SystemParameters.ComboBoxPopupAnimationKey}}" Placement="Bottom">
     							<Microsoft_Windows_Themes:SystemDropShadowChrome x:Name="Shdw" Color="Transparent" MaxHeight="{TemplateBinding MaxDropDownHeight}" MinWidth="{Binding ActualWidth, ElementName=MainGrid}">
     								<Border x:Name="DropDownBorder" BorderBrush="{DynamicResource {x:Static SystemColors.WindowFrameBrushKey}}" BorderThickness="1" Background="#FF333333">
@@ -361,7 +361,7 @@
         	<RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
-        <ComboBox HorizontalAlignment="Left" Width="140" Margin="8,8,0,0" Grid.Row="1" Style="{DynamicResource ComboBoxStyle1}" BorderBrush="#FF333333" Foreground="White" Background="#FF333333" FontSize="14">
+        <ComboBox HorizontalAlignment="Left" Width="140" Margin="8,8,0,0" Grid.Row="1" Style="{DynamicResource ComboBoxStyle1}" BorderBrush="#FF333333" Foreground="White" Background="#FF333333" FontSize="14" SelectedIndex="0">
         	<ComboBoxItem Content="All Departments"/>
         	<ComboBoxItem Content="Apparel"/>
         	<ComboBoxItem Content="Footwear"/>
