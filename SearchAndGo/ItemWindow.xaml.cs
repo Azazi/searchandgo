@@ -33,8 +33,7 @@ namespace SearchAndGo
         /// <param name="image"></param>
         public ItemWindow(Image image)
         {
-            this.InitializeComponent();
-
+            this.InitializeComponent();            
             // This will be changed when a database item is in use
             productImage.Source = image.Source;
 

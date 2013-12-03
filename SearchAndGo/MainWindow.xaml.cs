@@ -42,10 +42,70 @@ namespace SearchAndGo
             // Setup categories
             addCategories();
 
+            // Setup event handlers for the window
+            setupHandlers();
+        }
+
+        public static WrapPanel getMain()
+        {
+            return displayArea;
+        }
+
+        private void addCategories()
+        {
+            this.Dispatcher.Invoke((Action)(() =>
+            {
+                //displayInContentArea(new CategoryBrowser(fakeDataBaseQuery("hockey").First()));
+                //displayInContentArea(new CategoryBrowser(fakeDataBaseQuery("apparel").First()));
+                //displayInContentArea(new CategoryBrowser(fakeDataBaseQuery("backpack").First()));
+                //displayInContentArea(new CategoryBrowser(fakeDataBaseQuery("jacket").First()));
+                //displayInContentArea(new CategoryBrowser(fakeDataBaseQuery("skates").First()));
+                //displayInContentArea(new CategoryBrowser(fakeDataBaseQuery("fanshop").First()));
+                //displayInContentArea(new CategoryBrowser(fakeDataBaseQuery("basketball").First()));
+                //displayInContentArea(new CategoryBrowser(fakeDataBaseQuery("sneakers").First()));
+
+                List<string> allCat = FakeDB.getAllCategories();
+                List<CategoryBrowser> listOfallCategories = new List<CategoryBrowser>();
+                foreach (string category in allCat)
+                {
+                    SearchResultItem anItem = FakeDB.fakeDataBaseQuery(category).First();
+                    CategoryBrowser aCategory = new CategoryBrowser(anItem);
+                    listOfallCategories.Add(aCategory);
+                }
+                DisplayToMainView.displayInContentArea(displayArea, listOfallCategories);
+            }));
+        }
+
+        private void MainSearchBar_IsKeyboardFocusWithinChanged(object sender, DependencyPropertyChangedEventArgs e)
+        {
+            MainSearchBar.Text = "";
+        }
+
+        private void MainSearchBar_KeyDown(object sender, KeyEventArgs e)
+        {
+            searchString = MainSearchBar.Text;
+            if (e.Key == Key.Enter)
+            {
+                DisplayToMainView.displayInContentArea(displayArea, FakeDB.fakeDataBaseQuery(MainSearchBar.Text));
+            }
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            DisplayToMainView.displayInContentArea(displayArea, FakeDB.fakeDataBaseQuery(searchString));
+        }
+
+        #region Event Handlers
+        void setupHandlers()
+        {
+            Home_Button.Click += new RoutedEventHandler(Home_Button_Click);
             Help_Button.Click += new RoutedEventHandler(Help_Button_Click);
             this.KeyDown += new KeyEventHandler(MainWindow_KeyDown);
+        }
 
-            //searchBar.OnSearch += new RoutedEventHandler(m_txtTest_OnSearch);
+        void Home_Button_Click(object sender, RoutedEventArgs e)
+        {
+            addCategories();
         }
 
         void MainWindow_KeyDown(object sender, KeyEventArgs e)
@@ -56,17 +116,12 @@ namespace SearchAndGo
             }
         }
 
-        public static WrapPanel getMain()
-        {
-            return displayArea;
-        }
-
-
         public void Help_Button_Click(object sender, RoutedEventArgs e)
         {
             HelpWindow helpPage = new HelpWindow();
             helpPage.Show();
         }
+        #endregion
 
         /// <summary>
         /// Setup the banner
@@ -99,86 +154,6 @@ namespace SearchAndGo
             Thickness bannerThickness = new Thickness(8, 8, 8, 0);
             banner.SetValue(MarginProperty, bannerThickness);
             banner.start();
-        }
-
-        private void addCategories()
-        {
-            this.Dispatcher.Invoke((Action)(() =>
-            {
-                //displayInContentArea(new CategoryBrowser(fakeDataBaseQuery("hockey").First()));
-                //displayInContentArea(new CategoryBrowser(fakeDataBaseQuery("apparel").First()));
-                //displayInContentArea(new CategoryBrowser(fakeDataBaseQuery("backpack").First()));
-                //displayInContentArea(new CategoryBrowser(fakeDataBaseQuery("jacket").First()));
-                //displayInContentArea(new CategoryBrowser(fakeDataBaseQuery("skates").First()));
-                //displayInContentArea(new CategoryBrowser(fakeDataBaseQuery("fanshop").First()));
-                //displayInContentArea(new CategoryBrowser(fakeDataBaseQuery("basketball").First()));
-                //displayInContentArea(new CategoryBrowser(fakeDataBaseQuery("sneakers").First()));
-
-                List<string> allCat = FakeDB.getAllCategories();
-                List<CategoryBrowser> listOfallCategories = new List<CategoryBrowser>();
-                foreach (string category in allCat)
-                {
-                    SearchResultItem anItem = FakeDB.fakeDataBaseQuery(category).First();
-                    CategoryBrowser aCategory = new CategoryBrowser(anItem);
-                    listOfallCategories.Add(aCategory);
-                }
-                DisplayToMainView.displayInContentArea(displayArea, listOfallCategories);
-            }));
-        }
-
-        private void addNike()
-        {
-            this.Dispatcher.Invoke((Action)(() =>
-            {
-                //ImageSource categorySource = (ImageSource)new ImageSourceConverter().ConvertFromString(@"..\..\Resources\Images\Nike\i1.jpg");
-                //Image categoryImage = new Image();
-                //categoryImage.Source = categorySource;
-                //SearchResultItem newItem = new SearchResultItem("Nike Zoom Stefan", categoryImage);
-                //SearchResultsStackPanel.Children.Add(newItem);
-
-                //categorySource = (ImageSource)new ImageSourceConverter().ConvertFromString(@"..\..\Resources\Images\Nike\i2.jpg");
-                //categoryImage = new Image();
-                //categoryImage.Source = categorySource;
-                //newItem = new SearchResultItem("Nike Dunk Mid", categoryImage);
-                //SearchResultsStackPanel.Children.Add(newItem);
-
-                //categorySource = (ImageSource)new ImageSourceConverter().ConvertFromString(@"..\..\Resources\Images\Nike\i3.jpg");
-                //categoryImage = new Image();
-                //categoryImage.Source = categorySource;
-                //newItem = new SearchResultItem("Nike SB Lunar", categoryImage);
-                //SearchResultsStackPanel.Children.Add(newItem);
-
-                //categorySource = (ImageSource)new ImageSourceConverter().ConvertFromString(@"..\..\Resources\Images\Nike\i4.jpg");
-                //categoryImage = new Image();
-                //categoryImage.Source = categorySource;
-                //newItem = new SearchResultItem("Nike SB Januski", categoryImage);
-                //SearchResultsStackPanel.Children.Add(newItem);
-
-                //categorySource = (ImageSource)new ImageSourceConverter().ConvertFromString(@"..\..\Resources\Images\Nike\i5.jpg");
-                //categoryImage = new Image();
-                //categoryImage.Source = categorySource;
-                //newItem = new SearchResultItem("Nike Project BA", categoryImage);
-                //SearchResultsStackPanel.Children.Add(newItem);
-            }));
-        }
-
-        private void MainSearchBar_IsKeyboardFocusWithinChanged(object sender, DependencyPropertyChangedEventArgs e)
-        {
-                MainSearchBar.Text = "";
-        }
-
-        private void MainSearchBar_KeyDown(object sender, KeyEventArgs e)
-        {
-            searchString = MainSearchBar.Text;
-            if (e.Key == Key.Enter)
-            {
-                DisplayToMainView.displayInContentArea(displayArea, FakeDB.fakeDataBaseQuery(MainSearchBar.Text));
-            }
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            DisplayToMainView.displayInContentArea(displayArea, FakeDB.fakeDataBaseQuery(searchString));
         }
 
         #region Automatically Generated Code

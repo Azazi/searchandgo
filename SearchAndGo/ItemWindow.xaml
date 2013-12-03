@@ -3,8 +3,8 @@
 	x:Name="Window"
     WindowStyle="None"
     HorizontalAlignment="Center" VerticalAlignment="Center"
-	Title="ItemWindow"
     WindowStartupLocation="CenterScreen"        
+	Title="ItemWindow"
     Background="Gray"
 	Width="1200" Height="800">
 
@@ -232,7 +232,7 @@
         <Canvas Grid.Row="0" Grid.Column="1" Margin="8,8,8,0" Background="White">
         	<Button Name="findInStoreButton" Content="Find in this store" Width="180" Canvas.Left="8" Canvas.Top="154" Height="50" Background="#FF333333" Foreground="White" FontSize="16" FontStretch="Expanded"/>
         	<Button Name="seeOtherLocationsButton" Content="See other locations" Width="180" Canvas.Left="228" Canvas.Top="154" Height="50" Background="#FF333333" Foreground="White" FontSize="16" FontStretch="Expanded"/>
-        	<ComboBox Width="67" Canvas.Left="341" Canvas.Top="54" Height="50" BorderBrush="#FF707070" Style="{DynamicResource ComboBoxStyle1}" Foreground="#FF333333" FontWeight="Bold">
+        	<ComboBox x:Name="colorComboBox" Width="67" Canvas.Left="341" Canvas.Top="76.5" Height="50" BorderBrush="#FF707070" Style="{DynamicResource ComboBoxStyle1}" Foreground="#FF333333" FontWeight="Bold" SelectedIndex="0">
         		<ComboBox.Background>
         			<LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
         				<GradientStop Color="#FF333333" Offset="0"/>
@@ -246,7 +246,7 @@
         		<ComboBoxItem x:Name="Blue" Content="Blue"/>
         		<ComboBoxItem x:Name="Black" Content="Black"/>
         	</ComboBox>
-        	<ComboBox Width="67" Canvas.Left="121" Canvas.Top="54" Height="50" Style="{DynamicResource ComboBoxStyle1}" Foreground="#FF333333" FontWeight="Bold">
+        	<ComboBox x:Name="sizeComboBox" Width="67" Canvas.Left="121" Canvas.Top="76.5" Height="50" Style="{DynamicResource ComboBoxStyle1}" Foreground="#FF333333" FontWeight="Bold" SelectedIndex="0">
         		<ComboBox.Background>
         			<LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
         				<GradientStop Color="#FF333333" Offset="0"/>
@@ -260,11 +260,12 @@
         		<ComboBoxItem x:Name="_8_5" Content="8.5"/>
         		<ComboBoxItem x:Name="_9" Content="9"/>
         	</ComboBox>
-        	<TextBlock TextWrapping="Wrap" Text="Lightweight, in deference to fast cars and all the cutting-edge technology that makes them that way. Breathable. Like, flying down the highway with the top down breathable." Canvas.Left="8" Canvas.Top="277" Height="115" Width="402" FontSize="16"/>
-        	<TextBlock TextWrapping="Wrap" Text="Product Information" RenderTransformOrigin="2.12,16.385" Canvas.Left="8" Canvas.Top="246" Height="31" Width="287" FontSize="18.667" FontWeight="Bold"/>
-        	<TextBlock TextWrapping="Wrap" Text="Puma Future Cat Super LT" RenderTransformOrigin="2.12,16.385" Height="31" Width="287" FontSize="18.667" FontWeight="Bold" Canvas.Left="6.5" Canvas.Top="9"/>
-        	<TextBlock TextWrapping="Wrap" Text="Choose size" Canvas.Left="21" Canvas.Top="67" Width="100" Height="33" FontSize="16"/>
-        	<TextBlock TextWrapping="Wrap" Text="Choose color" RenderTransformOrigin="0.426,0.376" Canvas.Left="228" Canvas.Top="66" Height="34" Width="109" FontSize="16"/>
+        	<TextBlock x:Name="productInformationTexBox" TextWrapping="Wrap" Text="Lightweight, in deference to fast cars and all the cutting-edge technology that makes them that way. Breathable. Like, flying down the highway with the top down breathable." Canvas.Left="8" Canvas.Top="277" Height="115" Width="402" FontSize="16"/>
+        	<TextBlock x:Name="productInformationLabel" TextWrapping="Wrap" Text="Product Information" RenderTransformOrigin="2.12,16.385" Canvas.Left="8" Canvas.Top="246" Height="31" Width="287" FontSize="18.667" FontWeight="Bold"/>
+        	<TextBlock x:Name="productNameLabel" TextWrapping="Wrap" Text="Puma Future Cat Super LT" RenderTransformOrigin="2.12,16.385" Height="31" Width="287" FontSize="18.667" Canvas.Left="6.5" Canvas.Top="9"/>
+        	<TextBlock x:Name="sizeLabel" TextWrapping="Wrap" Text="Choose size" Canvas.Left="21" Canvas.Top="89.5" Width="100" Height="33" FontSize="16"/>
+        	<TextBlock x:Name="colorLabel" TextWrapping="Wrap" Text="Choose color" RenderTransformOrigin="0.426,0.376" Canvas.Left="228" Canvas.Top="88.5" Height="34" Width="109" FontSize="16"/>
+        	<Label x:Name="priceLabel" Content="$24.95" Height="28.5" Canvas.Left="8" Canvas.Top="35" Width="180" FontSize="16" FontWeight="Bold" ScrollViewer.VerticalScrollBarVisibility="Disabled"/>
         </Canvas>
         <StackPanel x:Name="relatedItemsStackPanel" Grid.RowSpan="2" Grid.Column="2" Margin="0,8,0,0" HorizontalAlignment="Left" Width="334" VerticalAlignment="Top">
             <TextBlock Text="You may also like" FontSize="18.667" FontWeight="Bold" HorizontalAlignment="Left"/>
@@ -272,7 +273,7 @@
         <ScrollViewer Grid.Row="1" Grid.ColumnSpan="2" x:Name="ScrollViewMain" Margin="8,8,8,0" Height="500" VerticalAlignment="Bottom" VerticalScrollBarVisibility="Auto" BorderBrush="#FF333333" Padding="0">
             <Grid Name="scrollViewGrid" Background="White">
                 <TextBlock x:Name="reviewsTextBlock" Width="826" Margin="0,40,0,143" FontSize="16" Background="White" ><Run Text="There are no reviews for this product."/><LineBreak/><Run Text=""/><LineBreak/><Run/><LineBreak/><Run/><LineBreak/><Run/><LineBreak/><Run/><LineBreak/><Run/><LineBreak/><LineBreak/><Run/><LineBreak/><Run/><LineBreak/><Run/><LineBreak/><Run Text="....."/></TextBlock>
-                <TextBlock TextWrapping="Wrap" Text="Reviews" RenderTransformOrigin="2.12,16.385" FontSize="18.667" FontWeight="Bold" Height="40" VerticalAlignment="Top" Background="White"/>
+                <TextBlock x:Name="reviewsLabel" TextWrapping="Wrap" Text="Reviews" RenderTransformOrigin="2.12,16.385" FontSize="18.667" FontWeight="Bold" Height="40" VerticalAlignment="Top" Background="White"/>
             </Grid>
         </ScrollViewer>
     </Grid>
