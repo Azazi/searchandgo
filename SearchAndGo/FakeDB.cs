@@ -39,17 +39,25 @@ namespace SearchAndGo
 
         public static List<SearchResultItem> fakeDataBaseQuery(string query)
         {
-            string actualQuery = query.ToLower();
-            List<SearchResultItem> allItems = convertToItems(GetImagesFromFile());
-            List<SearchResultItem> results = new List<SearchResultItem>();
-            foreach (SearchResultItem currItem in allItems)
+            if (query!=null)
             {
-                if (currItem.name.Contains(actualQuery) || currItem.brand.Contains(actualQuery) || currItem.category.Contains(actualQuery))
+                string actualQuery = query.ToLower();
+                List<SearchResultItem> allItems = convertToItems(GetImagesFromFile());
+                List<SearchResultItem> results = new List<SearchResultItem>();
+                foreach (SearchResultItem currItem in allItems)
                 {
-                    results.Add(currItem);
+                    if (currItem.name.Contains(actualQuery) || currItem.brand.Contains(actualQuery) || currItem.category.Contains(actualQuery))
+                    {
+                        results.Add(currItem);
+                    }
                 }
+                return results;
             }
-            return results;
+            else
+            {
+                List<SearchResultItem> results = new List<SearchResultItem>();
+                return results;
+            }
         }
 
         public static List<string> getAllCategories()

@@ -60,9 +60,7 @@ C:\Users\Alaa\Documents\GitHub\CPSC-481\SearchAndGo\bin\Debug\SearchAndGo.xml
 C:\Users\Alaa\Documents\GitHub\CPSC-481\SearchAndGo\bin\Debug\SearchAndGo.exe
 C:\Users\Alaa\Documents\GitHub\CPSC-481\SearchAndGo\bin\Debug\SearchAndGo.pdb
 C:\Users\Alaa\Documents\GitHub\CPSC-481\SearchAndGo\bin\Debug\Microsoft.Expression.Drawing.dll
-C:\Users\Alaa\Documents\GitHub\CPSC-481\SearchAndGo\bin\Debug\SearchTextBox.dll
 C:\Users\Alaa\Documents\GitHub\CPSC-481\SearchAndGo\bin\Debug\Transitionals.dll
-C:\Users\Alaa\Documents\GitHub\CPSC-481\SearchAndGo\bin\Debug\SearchTextBox.pdb
 C:\Users\Alaa\Documents\GitHub\CPSC-481\SearchAndGo\bin\Debug\Microsoft.Expression.Drawing.xml
 C:\Users\Alaa\Documents\GitHub\CPSC-481\SearchAndGo\obj\Debug\SearchAndGo.csprojResolveAssemblyReference.cache
 C:\Users\Alaa\Documents\GitHub\CPSC-481\SearchAndGo\obj\Debug\Banner.baml
@@ -74,7 +72,6 @@ C:\Users\Alaa\Documents\GitHub\CPSC-481\SearchAndGo\obj\Debug\ItemWindow.baml
 C:\Users\Alaa\Documents\GitHub\CPSC-481\SearchAndGo\obj\Debug\MainWindow.baml
 C:\Users\Alaa\Documents\GitHub\CPSC-481\SearchAndGo\obj\Debug\SearchResultItem.baml
 C:\Users\Alaa\Documents\GitHub\CPSC-481\SearchAndGo\obj\Debug\WelcomeWindow.baml
-C:\Users\Alaa\Documents\GitHub\CPSC-481\SearchAndGo\obj\Debug\App.baml
 C:\Users\Alaa\Documents\GitHub\CPSC-481\SearchAndGo\obj\Debug\Banner.g.cs
 C:\Users\Alaa\Documents\GitHub\CPSC-481\SearchAndGo\obj\Debug\FindAtOtherLocation.g.cs
 C:\Users\Alaa\Documents\GitHub\CPSC-481\SearchAndGo\obj\Debug\HelpPage.g.cs
@@ -165,3 +162,6 @@ C:\Users\aselab\Developer\CPSC-481\SearchAndGo\obj\Debug\CategoryBrowser.g.cs
 \\cs-fs01\Profiles\ug\amazazi\Desktop\GitHub\CPSC-481\SearchAndGo\obj\Debug\GenerateResource.read.1.tlog
 \\cs-fs01\Profiles\ug\amazazi\Desktop\GitHub\CPSC-481\SearchAndGo\obj\Debug\GenerateResource.write.1.tlog
 \\cs-fs01\Profiles\ug\amazazi\Desktop\GitHub\CPSC-481\SearchAndGo\obj\Debug\SearchAndGo.pdb
+C:\Users\Alaa\Documents\GitHub\CPSC-481\SearchAndGo\obj\Debug\CategoryBrowser.baml
+C:\Users\Alaa\Documents\GitHub\CPSC-481\SearchAndGo\obj\Debug\CategoryBrowser.g.cs
+C:\Users\Alaa\Documents\GitHub\CPSC-481\SearchAndGo\obj\Debug\App.baml

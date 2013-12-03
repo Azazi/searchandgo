@@ -101,12 +101,12 @@
     		<Setter Property="Template">
     			<Setter.Value>
     				<ControlTemplate TargetType="{x:Type ToggleButton}">
-    					<Microsoft_Windows_Themes:ButtonChrome x:Name="Chrome" BorderBrush="{TemplateBinding BorderBrush}" Background="{TemplateBinding Background}" RenderMouseOver="{TemplateBinding IsMouseOver}" RenderPressed="{TemplateBinding IsPressed}" SnapsToDevicePixels="true">
-    						<Grid HorizontalAlignment="Right" Width="{DynamicResource {x:Static SystemParameters.VerticalScrollBarWidthKey}}" Visibility="Visible" ScrollViewer.VerticalScrollBarVisibility="Visible">
-    							<Path x:Name="Arrow" Data="{StaticResource DownArrowGeometry}" Fill="White" HorizontalAlignment="Center" Margin="3,1,0,0" VerticalAlignment="Center"/>
-    						</Grid>
-    					</Microsoft_Windows_Themes:ButtonChrome>
-    					<ControlTemplate.Triggers>
+                        <Microsoft_Windows_Themes:ButtonChrome x:Name="Chrome" Background="{TemplateBinding Background}" RenderMouseOver="{TemplateBinding IsMouseOver}" RenderPressed="{TemplateBinding IsPressed}" SnapsToDevicePixels="true" HorizontalAlignment="Stretch" IsHitTestVisible="True" OpacityMask="{x:Null}" BorderBrush="{x:Null}">
+                            <Grid HorizontalAlignment="Right" Width="{DynamicResource {x:Static SystemParameters.VerticalScrollBarWidthKey}}" Visibility="Visible" ScrollViewer.VerticalScrollBarVisibility="Visible" IsHitTestVisible="False">
+                                <Path x:Name="Arrow" Data="{StaticResource DownArrowGeometry}" Fill="White" HorizontalAlignment="Center" Margin="3,1,0,0" VerticalAlignment="Center"/>
+                            </Grid>
+                        </Microsoft_Windows_Themes:ButtonChrome>
+                        <ControlTemplate.Triggers>
     						<Trigger Property="IsChecked" Value="true">
     							<Setter Property="RenderPressed" TargetName="Chrome" Value="true"/>
     						</Trigger>
@@ -249,14 +249,14 @@
     											<Canvas HorizontalAlignment="Left" Height="0" VerticalAlignment="Top" Width="0">
     												<Rectangle x:Name="OpaqueRect" Fill="{Binding Background, ElementName=DropDownBorder}" Height="{Binding ActualHeight, ElementName=DropDownBorder}" Width="123" Canvas.Left="17"/>
     											</Canvas>
-    											<ItemsPresenter x:Name="ItemsPresenter" KeyboardNavigation.DirectionalNavigation="Contained" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" Margin="12,0,-10,0" OpacityMask="#FF333333"/>
+    											<ItemsPresenter x:Name="ItemsPresenter" KeyboardNavigation.DirectionalNavigation="Contained" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" Margin="-10,0,0,0" OpacityMask="#FF333333" HorizontalAlignment="Center" VerticalAlignment="Stretch" MinWidth="50"/>
     										</Grid>
     									</ScrollViewer>
     								</Border>
     							</Microsoft_Windows_Themes:SystemDropShadowChrome>
     						</Popup>
-    						<ToggleButton Background="{TemplateBinding Background}" Grid.ColumnSpan="2" IsChecked="{Binding IsDropDownOpen, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}" Style="{StaticResource ComboBoxReadonlyToggleButton}" BorderThickness="0" Margin="12,3.286,5,4"/>
-    						<ContentPresenter ContentTemplate="{TemplateBinding SelectionBoxItemTemplate}" ContentTemplateSelector="{TemplateBinding ItemTemplateSelector}" Content="{TemplateBinding SelectionBoxItem}" ContentStringFormat="{TemplateBinding SelectionBoxItemStringFormat}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" IsHitTestVisible="false" Margin="17,18,0,0" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" Height="33" Width="115" OpacityMask="#FFFFFDFD" Grid.ColumnSpan="2"/>
+    						<ToggleButton Background="{TemplateBinding Background}" Grid.ColumnSpan="2" IsChecked="{Binding IsDropDownOpen, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}" Style="{StaticResource ComboBoxReadonlyToggleButton}" BorderThickness="0" Margin="12,3.286,5,4" Opacity="1"/>
+    						<ContentPresenter ContentTemplate="{TemplateBinding SelectionBoxItemTemplate}" ContentTemplateSelector="{TemplateBinding ItemTemplateSelector}" Content="{TemplateBinding SelectionBoxItem}" ContentStringFormat="{TemplateBinding SelectionBoxItemStringFormat}" IsHitTestVisible="false" Margin="10,10,0,0" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" Height="33" Width="115" OpacityMask="#FFFFFDFD" Grid.ColumnSpan="2" HorizontalAlignment="Center"/>
     					</Grid>
     					<ControlTemplate.Triggers>
     						<Trigger Property="HasDropShadow" SourceName="PART_Popup" Value="true">

@@ -160,7 +160,7 @@ namespace SearchAndGo
 
         private void MainSearchBar_IsKeyboardFocusWithinChanged(object sender, DependencyPropertyChangedEventArgs e)
         {
-            MainSearchBar.Text = "";
+                MainSearchBar.Text = "";
         }
 
         private void MainSearchBar_KeyDown(object sender, KeyEventArgs e)

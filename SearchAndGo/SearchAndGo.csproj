@@ -136,6 +136,7 @@
     <Resource Include="FR.png" />
     <Resource Include="french_flag.jpeg" />
     <Resource Include="help.jpg" />
+    <Resource Include="leftArrow.png" />
     <Resource Include="Resources\Images\EN.png" />
     <Resource Include="Resources\Images\ENMouseOver.png" />
     <Resource Include="Resources\Images\ENPressed.png" />
