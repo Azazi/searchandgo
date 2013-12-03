@@ -4,6 +4,7 @@
     WindowStyle="None"
     HorizontalAlignment="Center" VerticalAlignment="Center"
 	Title="ItemWindow"
+    WindowStartupLocation="CenterScreen"        
     Background="Gray"
 	Width="1200" Height="800">
 

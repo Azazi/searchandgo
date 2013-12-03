@@ -165,3 +165,4 @@ C:\Users\aselab\Developer\CPSC-481\SearchAndGo\obj\Debug\CategoryBrowser.g.cs
 C:\Users\Alaa\Documents\GitHub\CPSC-481\SearchAndGo\obj\Debug\CategoryBrowser.baml
 C:\Users\Alaa\Documents\GitHub\CPSC-481\SearchAndGo\obj\Debug\CategoryBrowser.g.cs
 C:\Users\Alaa\Documents\GitHub\CPSC-481\SearchAndGo\obj\Debug\App.baml
+\\cs-fs01\Profiles\ug\amazazi\Desktop\GitHub\CPSC-481\SearchAndGo\obj\Debug\App.baml

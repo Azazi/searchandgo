@@ -6,6 +6,7 @@
              mc:Ignorable="d" 
             BorderThickness="0"
             WindowStyle="None"
+            WindowStartupLocation="CenterScreen"
             Height="705"
             Width="700"
             >

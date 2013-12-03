@@ -8,6 +8,7 @@
     x:Class="SearchAndGo.MainWindow"
     Title="Search And Go"
     WindowStyle="None"
+    WindowStartupLocation="CenterScreen"
     Background="Silver"
     WindowState="Maximized"
     >
