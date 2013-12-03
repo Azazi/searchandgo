@@ -137,7 +137,7 @@ C:\Users\Alaa\Documents\GitHub\CPSC-481\SearchAndGo\obj\Debug\App.baml
 \\cs-fs01\Profiles\ug\amazazi\Desktop\GitHub\CPSC-481\SearchAndGo\bin\Debug\Microsoft.Expression.Drawing.xml
 \\cs-fs01\Profiles\ug\amazazi\Desktop\GitHub\CPSC-481\SearchAndGo\obj\Debug\ResolveAssemblyReference.cache
 \\cs-fs01\Profiles\ug\amazazi\Desktop\GitHub\CPSC-481\SearchAndGo\obj\Debug\Banner.baml
-\\cs-fs01\Profiles\ug\amazazi\Desktop\GitHub\CPSC-481\SearchAndGo\obj\Debug\CategoryBrowser.baml
+\\cs-fs01\Profiles\ug\amazazi\Desktop\GitHub\CPSC-481\SearchAndGo\obj\Debug\CategoryItem.baml
 \\cs-fs01\Profiles\ug\amazazi\Desktop\GitHub\CPSC-481\SearchAndGo\obj\Debug\FindAtOtherLocation.baml
 \\cs-fs01\Profiles\ug\amazazi\Desktop\GitHub\CPSC-481\SearchAndGo\obj\Debug\HelpWindow.baml
 \\cs-fs01\Profiles\ug\amazazi\Desktop\GitHub\CPSC-481\SearchAndGo\obj\Debug\SearchResultItem2.baml
@@ -148,7 +148,7 @@ C:\Users\Alaa\Documents\GitHub\CPSC-481\SearchAndGo\obj\Debug\App.baml
 \\cs-fs01\Profiles\ug\amazazi\Desktop\GitHub\CPSC-481\SearchAndGo\obj\Debug\WelcomeWindow.baml
 \\cs-fs01\Profiles\ug\amazazi\Desktop\GitHub\CPSC-481\SearchAndGo\obj\Debug\App.baml
 \\cs-fs01\Profiles\ug\amazazi\Desktop\GitHub\CPSC-481\SearchAndGo\obj\Debug\Banner.g.cs
-\\cs-fs01\Profiles\ug\amazazi\Desktop\GitHub\CPSC-481\SearchAndGo\obj\Debug\CategoryBrowser.g.cs
+\\cs-fs01\Profiles\ug\amazazi\Desktop\GitHub\CPSC-481\SearchAndGo\obj\Debug\CategoryItem.g.cs
 \\cs-fs01\Profiles\ug\amazazi\Desktop\GitHub\CPSC-481\SearchAndGo\obj\Debug\FindAtOtherLocation.g.cs
 \\cs-fs01\Profiles\ug\amazazi\Desktop\GitHub\CPSC-481\SearchAndGo\obj\Debug\HelpWindow.g.cs
 \\cs-fs01\Profiles\ug\amazazi\Desktop\GitHub\CPSC-481\SearchAndGo\obj\Debug\SearchResultItem2.g.cs

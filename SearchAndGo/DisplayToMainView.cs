@@ -23,16 +23,16 @@ namespace SearchAndGo
             panel.Children.Add(anItem);
         }
 
-        public static void displayInContentArea(WrapPanel panel, CategoryBrowser anItem)
+        public static void displayInContentArea(WrapPanel panel, CategoryItem anItem)
         {
             panel.Children.Clear();
             panel.Children.Add(anItem);
         }
 
-        public static void displayInContentArea(WrapPanel panel, List<CategoryBrowser> aList)
+        public static void displayInContentArea(WrapPanel panel, List<CategoryItem> aList)
         {
             panel.Children.Clear();
-            foreach (CategoryBrowser item in aList)
+            foreach (CategoryItem item in aList)
             {
                 panel.Children.Add(item);
             }

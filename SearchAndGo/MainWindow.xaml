@@ -388,7 +388,7 @@
 
         <Label Content="Browse items" FontSize="14" Foreground="White" Grid.Row="3" Margin="8,8,8,0" />
         <ScrollViewer Grid.Row="3" x:Name="ScrollViewMain" Margin="8,40,8,0" Height="500" VerticalAlignment="Bottom" VerticalScrollBarVisibility="Auto">
-            <WrapPanel x:Name="SearchResultsStackPanel" Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top"> </WrapPanel>
+            <WrapPanel x:Name="SearchResultsStackPanel" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top"> </WrapPanel>
         </ScrollViewer>
         <!--<TextBlock Name="searchBar"  TextWrapping="Wrap" Text="Search" VerticalAlignment="Bottom" Margin="146,8,73,0" Grid.Row="1" Height="60" ToolTip="Search" TabIndex="0" BorderThickness="2" FontSize="37.333" FontFamily="Arial" AcceptsReturn="True" BorderBrush="#FF333333" Foreground="#FF747272" TextAlignment="Justify" />-->
         <TextBox Name="searchBar"  TextWrapping="Wrap" Text="Search" VerticalAlignment="Bottom" Margin="146,8,73,0" Grid.Row="1" Height="60" ToolTip="Search" 

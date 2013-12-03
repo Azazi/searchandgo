@@ -65,11 +65,11 @@ namespace SearchAndGo
                 //displayInContentArea(new CategoryBrowser(fakeDataBaseQuery("sneakers").First()));
 
                 List<string> allCat = FakeDB.getAllCategories();
-                List<CategoryBrowser> listOfallCategories = new List<CategoryBrowser>();
+                List<CategoryItem> listOfallCategories = new List<CategoryItem>();
                 foreach (string category in allCat)
                 {
                     SearchResultItem anItem = FakeDB.fakeDataBaseQuery(category).First();
-                    CategoryBrowser aCategory = new CategoryBrowser(anItem);
+                    CategoryItem aCategory = new CategoryItem(anItem);
                     listOfallCategories.Add(aCategory);
                 }
                 DisplayToMainView.displayInContentArea(displayArea, listOfallCategories);

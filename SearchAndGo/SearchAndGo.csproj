@@ -70,8 +70,8 @@
     <Compile Include="Banner.xaml.cs">
       <DependentUpon>Banner.xaml</DependentUpon>
     </Compile>
-    <Compile Include="CategoryBrowser.xaml.cs">
-      <DependentUpon>CategoryBrowser.xaml</DependentUpon>
+    <Compile Include="CategoryItem.xaml.cs">
+      <DependentUpon>CategoryItem.xaml</DependentUpon>
     </Compile>
     <Compile Include="DataBaseItem.cs" />
     <Compile Include="DisplayToMainView.cs" />
@@ -161,7 +161,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="CategoryBrowser.xaml">
+    <Page Include="CategoryItem.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
