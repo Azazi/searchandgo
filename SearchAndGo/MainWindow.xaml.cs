@@ -23,13 +23,14 @@ namespace SearchAndGo
     /// </summary>
     public partial class MainWindow : Window
     {
-        /// <summary>
-        /// Default constructor.
-        /// </summary>
         public Banner banner;
         public Window current;
         public static WrapPanel displayArea;
         public string searchString;
+
+        /// <summary>
+        /// Default constructor.
+        /// </summary>
         public MainWindow()
         {
             InitializeComponent();
@@ -63,10 +64,13 @@ namespace SearchAndGo
 
         public void Help_Button_Click(object sender, RoutedEventArgs e)
         {
-            HelpPage helpPage = new HelpPage();
+            HelpWindow helpPage = new HelpWindow();
             helpPage.Show();
         }
 
+        /// <summary>
+        /// Setup the banner
+        /// </summary>
         private void setupBanner()
         {
             banner = new Banner();
@@ -92,8 +96,8 @@ namespace SearchAndGo
             }));
 
             banner.SetValue(Grid.RowProperty, 2);
-            Thickness t = new Thickness(8, 8, 8, 0);
-            banner.SetValue(MarginProperty, t);
+            Thickness bannerThickness = new Thickness(8, 8, 8, 0);
+            banner.SetValue(MarginProperty, bannerThickness);
             banner.start();
         }
 

@@ -17,22 +17,38 @@ namespace SearchAndGo
 	/// </summary>
 	public partial class ItemWindow : Window
 	{
+        /// <summary>
+        /// Find in Other Locations Window
+        /// </summary>
         FindAtOtherLocation findAtOtherLocation = new FindAtOtherLocation();
+
+        /// <summary>
+        /// Find in Store Window
+        /// </summary>
         FindInStoreWindow findInStoreWindow = new FindInStoreWindow();
 
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="image"></param>
         public ItemWindow(Image image)
         {
             this.InitializeComponent();
 
+            // This will be changed when a database item is in use
             productImage.Source = image.Source;
 
+            // TODO: Organize event handler setup in a separate function?
             Window.Deactivated += new EventHandler(Window_Deactivated);
-
             findInStoreButton.Click += new RoutedEventHandler(findInStoreButton_Click);
             seeOtherLocationsButton.Click += new RoutedEventHandler(seeOtherLocationsButton_Click);
+
+            // TODO: Get rid of this!
             addNike();
         }
 
+
+        #region Event Handling
         void Window_Deactivated(object sender, EventArgs e)
         {
             if(!findAtOtherLocation.IsVisible && !findInStoreWindow.IsVisible)
@@ -50,7 +66,9 @@ namespace SearchAndGo
             findInStoreWindow = new FindInStoreWindow();
             findInStoreWindow.Show();
         }
+        #endregion
 
+        // TODO: Get rid of this!
         void addNike()
         {
             this.Dispatcher.Invoke((Action)(() =>
