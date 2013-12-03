@@ -76,31 +76,46 @@ namespace SearchAndGo
             }));
         }
 
-        private void MainSearchBar_IsKeyboardFocusWithinChanged(object sender, DependencyPropertyChangedEventArgs e)
-        {
-            MainSearchBar.Text = "";
-        }
+        //private void MainSearchBar_IsKeyboardFocusWithinChanged(object sender, DependencyPropertyChangedEventArgs e)
+        //{
+        //    searchBar.Text = "";
+        //}
 
         private void MainSearchBar_KeyDown(object sender, KeyEventArgs e)
         {
-            searchString = MainSearchBar.Text;
+            searchString = searchBar.Text;
             if (e.Key == Key.Enter)
             {
-                DisplayToMainView.displayInContentArea(displayArea, FakeDB.fakeDataBaseQuery(MainSearchBar.Text));
+                DisplayToMainView.displayInContentArea(displayArea, FakeDB.fakeDataBaseQuery(searchBar.Text));
             }
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            DisplayToMainView.displayInContentArea(displayArea, FakeDB.fakeDataBaseQuery(searchString));
         }
 
         #region Event Handlers
         void setupHandlers()
         {
+            searchBar.GotFocus += new RoutedEventHandler(searchBar_GotFocus);
+            searchBar.LostFocus += new RoutedEventHandler(searchBar_LostFocus);
+            Search_Button.Click += new RoutedEventHandler(Search_Button_Click);
+
             Home_Button.Click += new RoutedEventHandler(Home_Button_Click);
             Help_Button.Click += new RoutedEventHandler(Help_Button_Click);
+            
             this.KeyDown += new KeyEventHandler(MainWindow_KeyDown);
+        }
+
+        void searchBar_LostFocus(object sender, RoutedEventArgs e)
+        {
+            searchBar.Text = "Search";
+        }
+
+        void searchBar_GotFocus(object sender, RoutedEventArgs e)
+        {
+            searchBar.Text = "";
+        }
+
+        void Search_Button_Click(object sender, RoutedEventArgs e)
+        {
+            DisplayToMainView.displayInContentArea(displayArea, FakeDB.fakeDataBaseQuery(searchString));
         }
 
         void Home_Button_Click(object sender, RoutedEventArgs e)

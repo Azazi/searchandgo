@@ -8,7 +8,7 @@
     Name="mainWindow"
     d:DesignHeight="300" d:DesignWidth="1300"
     >
-    <Grid Name="bannerGrid" MaxHeight="300" MaxWidth="1300">
+    <Grid Name="bannerGrid" MaxHeight="300" MaxWidth="1300" Cursor="Hand">
         <StackPanel Name="adsStackPanel" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         <Button Name="leftButton" HorizontalAlignment="Left" VerticalAlignment="Center" Content='&lt;' Height="300" Width="50" Background="#FF333333" Foreground="White" Style="{DynamicResource LeftButtonStyle}" />
         <Button Name="rightButton" HorizontalAlignment="Right" VerticalAlignment="Center" Content=">" Height="300" Width="50" Background="#FF333333" Foreground="White" />

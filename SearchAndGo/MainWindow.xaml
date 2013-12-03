@@ -365,10 +365,14 @@
         <ComboBox HorizontalAlignment="Left" Width="140" Margin="8,8,0,0" Grid.Row="1" Style="{DynamicResource ComboBoxStyle1}" BorderBrush="#FF333333" Foreground="White" Background="#FF333333" FontSize="14" SelectedIndex="0">
         	<ComboBoxItem Content="All Departments"/>
         	<ComboBoxItem Content="Apparel"/>
+            <ComboBoxItem Content="Equipment"/>
+            <ComboBoxItem Content="Fitness"/>
         	<ComboBoxItem Content="Footwear"/>
+            <ComboBoxItem Content="Hockey"/>
+            <ComboBoxItem Content="Outerwear"/>
         </ComboBox>
 
-        <Button Content="Go" HorizontalAlignment="Right" Margin="0,8,8,0" Grid.Row="1" Style="{DynamicResource ButtonStyleGo}" Width="85" Cursor="Hand" FontSize="20" Foreground="White" Click="Button_Click"/>
+        <Button x:Name="Search_Button" Content="Go" HorizontalAlignment="Right" Margin="0,8,8,0" Grid.Row="1" Style="{DynamicResource ButtonStyleGo}" Width="85" Cursor="Hand" FontSize="20" Foreground="White"/>
 
         <Button x:Name="Home_Button" Content="Button" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Left" Height="120" Margin="8,8,0,0" Style="{DynamicResource SportCheckHomeButton}" VerticalAlignment="Top" Width="140"/>
         <Button x:Name="Help_Button" Content="" Grid.Row="0" Grid.Column="2" HorizontalAlignment="Right" Height="120" Width="140" Margin="0,8,8,0" VerticalAlignment="Top" Cursor="Hand" Style="{DynamicResource ButtonStyleHelp}">
@@ -381,16 +385,15 @@
         		<ImageBrush ImageSource="french_flag.jpeg"/>
         	</Button.Background>
         </Button>
-        <!--<TextBox Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Top" Width="1080" Height="60" Margin="8,8,8,0" FontSize="48" TabIndex="0" ToolTip="Search" AcceptsReturn="True" />-->
 
         <Label Content="Browse items" FontSize="14" Foreground="White" Grid.Row="3" Margin="8,8,8,0" />
         <ScrollViewer Grid.Row="3" x:Name="ScrollViewMain" Margin="8,40,8,0" Height="500" VerticalAlignment="Bottom" VerticalScrollBarVisibility="Auto">
             <WrapPanel x:Name="SearchResultsStackPanel" Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top"> </WrapPanel>
         </ScrollViewer>
         <!--<TextBlock Name="searchBar"  TextWrapping="Wrap" Text="Search" VerticalAlignment="Bottom" Margin="146,8,73,0" Grid.Row="1" Height="60" ToolTip="Search" TabIndex="0" BorderThickness="2" FontSize="37.333" FontFamily="Arial" AcceptsReturn="True" BorderBrush="#FF333333" Foreground="#FF747272" TextAlignment="Justify" />-->
-        <TextBox Name="MainSearchBar"  TextWrapping="Wrap" Text="Search" VerticalAlignment="Bottom" Margin="146,8,73,0" Grid.Row="1" Height="60" ToolTip="Search" 
+        <TextBox Name="searchBar"  TextWrapping="Wrap" Text="Search" VerticalAlignment="Bottom" Margin="146,8,73,0" Grid.Row="1" Height="60" ToolTip="Search" 
                  TabIndex="0" BorderThickness="2" FontSize="37.333" FontFamily="Arial" BorderBrush="#FF333333" Foreground="#FF747272" TextAlignment="Justify" 
-                 IsKeyboardFocusWithinChanged="MainSearchBar_IsKeyboardFocusWithinChanged" KeyDown="MainSearchBar_KeyDown" Style="{DynamicResource SearchBar}" >
+                    KeyDown="MainSearchBar_KeyDown" Style="{DynamicResource SearchBar}" >
         	<TextBox.Resources>
         		<Style x:Key="SearchBar" BasedOn="{x:Null}" TargetType="{x:Type TextBox}">
         			<Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
