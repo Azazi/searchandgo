@@ -32,6 +32,9 @@ namespace SearchAndGo
             backgroundImage = image;
             parseName(image.Source.ToString().Split('/').Last());
 
+            string[] stringarray = (image.Source.ToString()).Substring(image.Source.ToString().LastIndexOf("/")).Split('-');
+            itemPrice.Content = "Our Price $" + stringarray[2];
+
             itemName.Content = this.name.ToUpper();
             mainButton.Content = backgroundImage;
             mainButton.Click += new RoutedEventHandler(mainButton_Click);

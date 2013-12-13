@@ -20,13 +20,22 @@
                         <Grid>
                             <VisualStateManager.VisualStateGroups>
                                 <VisualStateGroup x:Name="CommonStates">
-                                    <VisualState x:Name="Normal"/>
-                                    <VisualState x:Name="MouseOver"/>
-                                    <VisualState x:Name="Pressed"/>
-                                    <VisualState x:Name="Disabled"/>
-                                </VisualStateGroup>
+                            		<VisualStateGroup.Transitions>
+                            			<VisualTransition GeneratedDuration="0:0:0.5"/>
+                            		</VisualStateGroup.Transitions>
+                            		<VisualState x:Name="Normal"/>
+                            		<VisualState x:Name="MouseOver">
+                            			<Storyboard>
+                            				<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="image">
+                            					<EasingDoubleKeyFrame KeyTime="0" Value="0.495"/>
+                            				</DoubleAnimationUsingKeyFrames>
+                            			</Storyboard>
+                            		</VisualState>
+                            		<VisualState x:Name="Pressed"/>
+                            		<VisualState x:Name="Disabled"/>
+                            	</VisualStateGroup>
                             </VisualStateManager.VisualStateGroups>
-                            <Image Source="Resources\Images\SportCheckLogo.gif" Stretch="Fill" Cursor="Hand" ToolTip="Home"/>
+                            <Image x:Name="image" Source="Resources\Images\SportCheckLogo.gif" Stretch="Fill" Cursor="Hand" ToolTip="Home"/>
                             <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" Cursor="Hand" Content="">
                                 <ContentPresenter.Effect>
                                     <BlurEffect/>
@@ -348,6 +357,175 @@
     			</Setter.Value>
     		</Setter>
     	</Style>
+    	<Style x:Key="FrenchFlagButton" TargetType="{x:Type Button}">
+    		<Setter Property="Template">
+    			<Setter.Value>
+    				<ControlTemplate TargetType="{x:Type Button}">
+    					<Grid x:Name="grid" OpacityMask="Black">
+    						<VisualStateManager.VisualStateGroups>
+    							<VisualStateGroup x:Name="CommonStates">
+    								<VisualStateGroup.Transitions>
+    									<VisualTransition GeneratedDuration="0:0:0.5"/>
+    								</VisualStateGroup.Transitions>
+    								<VisualState x:Name="Normal"/>
+    								<VisualState x:Name="MouseOver">
+    									<Storyboard>
+    										<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="image">
+    											<EasingDoubleKeyFrame KeyTime="0" Value="0.5"/>
+    										</DoubleAnimationUsingKeyFrames>
+    									</Storyboard>
+    								</VisualState>
+    								<VisualState x:Name="Pressed">
+    									<Storyboard>
+    										<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="image">
+    											<EasingDoubleKeyFrame KeyTime="0" Value="0.7"/>
+    										</DoubleAnimationUsingKeyFrames>
+    										<ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.OpacityMask).(SolidColorBrush.Color)" Storyboard.TargetName="grid">
+    											<EasingColorKeyFrame KeyTime="0" Value="#FF333333"/>
+    										</ColorAnimationUsingKeyFrames>
+    									</Storyboard>
+    								</VisualState>
+    								<VisualState x:Name="Disabled"/>
+    							</VisualStateGroup>
+    						</VisualStateManager.VisualStateGroups>
+    						<Image x:Name="image">
+    							<Image.OpacityMask>
+    								<ImageBrush ImageSource="french_flag.jpeg"/>
+    							</Image.OpacityMask>
+    						</Image>
+    						<ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" Content="FR"/>
+    					</Grid>
+    					<ControlTemplate.Triggers>
+    						<Trigger Property="IsFocused" Value="True"/>
+    						<Trigger Property="IsDefaulted" Value="True"/>
+    						<Trigger Property="IsMouseOver" Value="True"/>
+    						<Trigger Property="IsPressed" Value="True"/>
+    						<Trigger Property="IsEnabled" Value="False"/>
+    					</ControlTemplate.Triggers>
+    				</ControlTemplate>
+    			</Setter.Value>
+    		</Setter>
+    	</Style>
+    	<Style x:Key="FRFlag" TargetType="{x:Type Button}">
+    		<Setter Property="Template">
+    			<Setter.Value>
+    				<ControlTemplate TargetType="{x:Type Button}">
+    					<Grid>
+    						<VisualStateManager.VisualStateGroups>
+    							<VisualStateGroup x:Name="CommonStates">
+    								<VisualStateGroup.Transitions>
+    									<VisualTransition GeneratedDuration="0:0:0.5"/>
+    								</VisualStateGroup.Transitions>
+    								<VisualState x:Name="Normal"/>
+    								<VisualState x:Name="MouseOver">
+    									<Storyboard>
+    										<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="image">
+    											<EasingDoubleKeyFrame KeyTime="0" Value="0.495"/>
+    										</DoubleAnimationUsingKeyFrames>
+    										<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="image1">
+    											<EasingDoubleKeyFrame KeyTime="0" Value="0.5"/>
+    										</DoubleAnimationUsingKeyFrames>
+    									</Storyboard>
+    								</VisualState>
+    								<VisualState x:Name="Pressed">
+    									<Storyboard>
+    										<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="image1">
+    											<EasingDoubleKeyFrame KeyTime="0" Value="0.695"/>
+    										</DoubleAnimationUsingKeyFrames>
+    									</Storyboard>
+    								</VisualState>
+    								<VisualState x:Name="Disabled"/>
+    							</VisualStateGroup>
+    						</VisualStateManager.VisualStateGroups>
+    						<Image Visibility="Hidden" x:Name="image" Source="Resources\Images\SportCheckLogo.gif" Stretch="Fill" Cursor="Hand" ToolTip="Home">
+    							<Image.OpacityMask>
+    								<ImageBrush ImageSource="Resources/Images/french_flag.jpeg"/>
+    							</Image.OpacityMask>
+    						</Image>
+    						<ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" Cursor="Hand" Content="FR" OpacityMask="{x:Null}">
+    							<ContentPresenter.Effect>
+    								<BlurEffect/>
+    							</ContentPresenter.Effect>
+    						</ContentPresenter>
+    						<Image x:Name="image1" Source="french_flag.jpeg" Stretch="Fill"/>
+    						<Label Content="FR" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="52.49,40.813,52.29,40.812" d:LayoutOverrides="Height"/>
+    					</Grid>
+    					<ControlTemplate.Triggers>
+    						<Trigger Property="IsFocused" Value="True"/>
+    						<Trigger Property="IsDefaulted" Value="True"/>
+    						<Trigger Property="IsMouseOver" Value="True"/>
+    						<Trigger Property="IsPressed" Value="True"/>
+    						<Trigger Property="IsEnabled" Value="False"/>
+    					</ControlTemplate.Triggers>
+    				</ControlTemplate>
+    			</Setter.Value>
+    		</Setter>
+    	</Style>
+    	<ControlTemplate x:Key="ButtonControlTemplate1" TargetType="{x:Type Button}">
+    		<Grid>
+    			<VisualStateManager.VisualStateGroups>
+    				<VisualStateGroup x:Name="CommonStates">
+    					<VisualStateGroup.Transitions>
+    						<VisualTransition GeneratedDuration="0:0:0.5"/>
+    					</VisualStateGroup.Transitions>
+    					<VisualState x:Name="Normal"/>
+    					<VisualState x:Name="MouseOver">
+    						<Storyboard>
+    							<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="rectangle">
+    								<EasingDoubleKeyFrame KeyTime="0" Value="0.495"/>
+    							</DoubleAnimationUsingKeyFrames>
+    						</Storyboard>
+    					</VisualState>
+    					<VisualState x:Name="Pressed">
+    						<Storyboard>
+    							<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="rectangle">
+    								<EasingDoubleKeyFrame KeyTime="0" Value="0.695"/>
+    							</DoubleAnimationUsingKeyFrames>
+    						</Storyboard>
+    					</VisualState>
+    					<VisualState x:Name="Disabled"/>
+    				</VisualStateGroup>
+    			</VisualStateManager.VisualStateGroups>
+    			<Rectangle x:Name="rectangle" RadiusY="5" RadiusX="5" Stroke="#FF333333" StrokeThickness="2">
+    				<Rectangle.Fill>
+    					<ImageBrush ImageSource="help.jpg"/>
+    				</Rectangle.Fill>
+    			</Rectangle>
+    		</Grid>
+    	</ControlTemplate>
+    	<ControlTemplate x:Key="ButtonControlTemplate2" TargetType="{x:Type Button}">
+    		<Grid>
+    			<VisualStateManager.VisualStateGroups>
+    				<VisualStateGroup x:Name="CommonStates">
+    					<VisualStateGroup.Transitions>
+    						<VisualTransition GeneratedDuration="0:0:0.5"/>
+    					</VisualStateGroup.Transitions>
+    					<VisualState x:Name="Normal"/>
+    					<VisualState x:Name="MouseOver">
+    						<Storyboard>
+    							<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(Brush.Opacity)" Storyboard.TargetName="rectangle">
+    								<EasingDoubleKeyFrame KeyTime="0" Value="0.5"/>
+    							</DoubleAnimationUsingKeyFrames>
+    						</Storyboard>
+    					</VisualState>
+    					<VisualState x:Name="Pressed">
+    						<Storyboard>
+    							<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(Brush.Opacity)" Storyboard.TargetName="rectangle">
+    								<EasingDoubleKeyFrame KeyTime="0" Value="0.7"/>
+    							</DoubleAnimationUsingKeyFrames>
+    						</Storyboard>
+    					</VisualState>
+    					<VisualState x:Name="Disabled"/>
+    				</VisualStateGroup>
+    			</VisualStateManager.VisualStateGroups>
+    			<Rectangle x:Name="rectangle" RadiusY="5" RadiusX="5" Stroke="#FF333333" StrokeThickness="2">
+    				<Rectangle.Fill>
+    					<ImageBrush ImageSource="french_flag.jpeg"/>
+    				</Rectangle.Fill>
+    			</Rectangle>
+    			<Label Content="FR" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="52,40,52.98,41.626" d:LayoutOverrides="Width, Height"/>
+    		</Grid>
+    	</ControlTemplate>
     </Window.Resources>
     
     <Grid Name="grid" ShowGridLines="False">
@@ -375,18 +553,18 @@
         <Button x:Name="Search_Button" Content="Go" HorizontalAlignment="Right" Margin="0,8,8,0" Grid.Row="1" Style="{DynamicResource ButtonStyleGo}" Width="85" Cursor="Hand" FontSize="20" Foreground="White"/>
 
         <Button x:Name="Home_Button" Content="Button" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Left" Height="120" Margin="8,8,0,0" Style="{DynamicResource SportCheckHomeButton}" VerticalAlignment="Top" Width="140"/>
-        <Button x:Name="Help_Button" Content="" Grid.Row="0" Grid.Column="2" HorizontalAlignment="Right" Height="120" Width="140" Margin="0,8,8,0" VerticalAlignment="Top" Cursor="Hand" Style="{DynamicResource ButtonStyleHelp}">
+        <Button  x:Name="Help_Button" Content="" Grid.Row="0" Grid.Column="2" HorizontalAlignment="Right" Height="120" Width="140" Margin="0,8,8,0" VerticalAlignment="Top" Cursor="Hand" Style="{DynamicResource HelpButton}" Template="{DynamicResource ButtonControlTemplate1}">
         	<Button.Background>
         		<ImageBrush ImageSource="help.jpg"/>
         	</Button.Background>
         </Button>
-        <Button x:Name="Language_Button" Content="FR" Grid.Row="0" Grid.Column="2" HorizontalAlignment="Right" Height="120" Width="140" Margin="0,8,156,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="21.333">
+        <Button Style="{DynamicResource FRFlag}" x:Name="Language_Button" Content="FR" Grid.Row="0" Grid.Column="2" HorizontalAlignment="Right" Height="120" Width="140" Margin="0,8,156,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="21.333" Template="{DynamicResource ButtonControlTemplate2}">
         	<Button.Background>
         		<ImageBrush ImageSource="french_flag.jpeg"/>
         	</Button.Background>
         </Button>
 
-        <Label Content="Browse items" FontSize="14" Foreground="White" Grid.Row="3" Margin="8,8,8,0" />
+        <Label Content="Browse items" FontSize="14" Visibility="Hidden" Foreground="Black" Grid.Row="3" Margin="8,8,8,0" />
         <ScrollViewer Grid.Row="3" x:Name="ScrollViewMain" Margin="8,40,8,0" Height="500" VerticalAlignment="Bottom" VerticalScrollBarVisibility="Auto">
             <WrapPanel x:Name="SearchResultsStackPanel" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top"> </WrapPanel>
         </ScrollViewer>

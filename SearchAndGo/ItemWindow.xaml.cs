@@ -36,11 +36,17 @@ namespace SearchAndGo
             this.InitializeComponent();            
             // This will be changed when a database item is in use
             productImage.Source = image.Source;
+            
+
+
+            string[] stringarray = (productImage.Source.ToString()).Substring(productImage.Source.ToString().LastIndexOf("/")).Split('-');
+            priceLabel.Content = "$" + stringarray[2];
 
             // TODO: Organize event handler setup in a separate function?
             Window.Deactivated += new EventHandler(Window_Deactivated);
             findInStoreButton.Click += new RoutedEventHandler(findInStoreButton_Click);
             seeOtherLocationsButton.Click += new RoutedEventHandler(seeOtherLocationsButton_Click);
+            closeButton.Click += new RoutedEventHandler(closeButton_Click);
 
             // TODO: Get rid of this!
             addNike();
@@ -48,6 +54,11 @@ namespace SearchAndGo
 
 
         #region Event Handling
+        void closeButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.Hide();
+        }
+
         void Window_Deactivated(object sender, EventArgs e)
         {
             if(!findAtOtherLocation.IsVisible && !findInStoreWindow.IsVisible)

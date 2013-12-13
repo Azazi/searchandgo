@@ -14,6 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.IO;
+using System.Timers;
 #endregion
 
 namespace SearchAndGo
@@ -27,6 +28,8 @@ namespace SearchAndGo
         public Window current;
         public static WrapPanel displayArea;
         public string searchString;
+        public Timer timeOutTimer;
+        public WelcomeWindow welcomeWindow = new WelcomeWindow();
 
         /// <summary>
         /// Default constructor.
@@ -34,6 +37,13 @@ namespace SearchAndGo
         public MainWindow()
         {
             InitializeComponent();
+
+            timeOutTimer = new Timer(300000);
+            timeOutTimer.Elapsed += new ElapsedEventHandler(timeOutTimer_Elapsed);
+            timeOutTimer.Enabled = true;
+            this.MouseMove += new MouseEventHandler(MainWindow_MouseMove);
+
+
             displayArea = SearchResultsStackPanel;
 
             // Setup the banner
@@ -44,6 +54,23 @@ namespace SearchAndGo
 
             // Setup event handlers for the window
             setupHandlers();
+        }
+
+        void MainWindow_MouseMove(object sender, MouseEventArgs e)
+        {
+            timeOutTimer.Stop();
+            timeOutTimer.Start();
+        }
+
+        void timeOutTimer_Elapsed(object sender, ElapsedEventArgs e)
+        {
+            this.Dispatcher.Invoke((Action)(() =>
+            {
+                App.Current.MainWindow = welcomeWindow;
+                welcomeWindow.Show();
+                this.Hide();
+                timeOutTimer.Stop();
+            }));
         }
 
         public static WrapPanel getMain()
@@ -83,6 +110,9 @@ namespace SearchAndGo
             {
                 DisplayToMainView.displayInContentArea(displayArea, FakeDB.fakeDataBaseQuery(searchBar.Text));
             }
+
+            timeOutTimer.Stop();
+            timeOutTimer.Start();
         }
 
         #region Event Handlers
