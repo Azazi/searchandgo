@@ -9,8 +9,8 @@
     BorderThickness="0"
     WindowStyle="None"
     Name="HelpUserControl"
-    Height="400"
-    Width="400"
+    Width="1200" 
+    Height="800"
     >
 	<Window.Resources>
 		<Style x:Key="ButtonStyleClose" TargetType="{x:Type Button}">
@@ -94,12 +94,18 @@
 		</Style>
 	</Window.Resources>
     
-    <Grid>
-        <TextBlock x:Name="textBlock1" Margin="29,95,29,177" UseLayoutRounding="True" TextWrapping="Wrap" TextAlignment="Center" FontSize="26.667" Text="Customer service representative is on their way to assist you" />
-        <Button Content="" Height="80" HorizontalAlignment="Left" Name="closeButton" VerticalAlignment="Top" Width="80" Click="closeButton_Click" Margin="298,0,0,0" Style="{DynamicResource ButtonStyleClose}">
-        </Button>
-        <TextBlock x:Name="textBlock1_Copy" Margin="29,0,29,114" UseLayoutRounding="True" TextWrapping="Wrap" TextAlignment="Center" FontSize="26.667" Height="41" VerticalAlignment="Bottom" ><Run FontWeight="Bold" Text="Estimated wait time"/></TextBlock>
-        <TextBlock x:Name="textBlock1_Copy1" Margin="29,0,29,78" UseLayoutRounding="True" TextWrapping="Wrap" TextAlignment="Center" FontSize="26.667" Height="41" VerticalAlignment="Bottom" Foreground="#FFE20D0D" ><Run FontWeight="Bold" Text="2 Minutes"/></TextBlock>
+    <Grid Name="mainGrid">
+        
+        <ScrollViewer Margin="0,91,0,75" Name="mainScroll">
+            <TextBlock Name="manualText" Width="1157" TextAlignment="Justify" TextWrapping="Wrap"></TextBlock>             
+        </ScrollViewer>
+        <Button Content="Request a Customer Service Representative's Help" Height="65" HorizontalAlignment="Left" Name="repHelp" VerticalAlignment="Top" Width="899" FontSize="40" Click="repHelp_Click" Margin="140,710,0,0" />
+
+        <TextBlock x:Name="textBlock1" Margin="106,213,122,78" UseLayoutRounding="True" TextWrapping="Wrap" TextAlignment="Center" FontSize="26.667" Text="Customer service representative is on their way to assist you" />
+        <Button Content="" Height="80" HorizontalAlignment="Left" Name="closeButton" VerticalAlignment="Top" Width="80" Click="closeButton_Click" Margin="1079,12,0,0" Style="{DynamicResource ButtonStyleClose}"/>
+        <TextBlock x:Name="textBlock1_Copy" Margin="29,0,29,431" UseLayoutRounding="True" TextWrapping="Wrap" TextAlignment="Center" FontSize="26.667" Height="41" VerticalAlignment="Bottom" ><Run FontWeight="Bold" Text="Estimated wait time"/></TextBlock>
+        <TextBlock x:Name="textBlock1_Copy1" Margin="29,0,29,344" UseLayoutRounding="True" TextWrapping="Wrap" TextAlignment="Center" FontSize="26.667" Height="41" VerticalAlignment="Bottom" Foreground="#FFE20D0D" ><Run FontWeight="Bold" Text="2 Minutes"/></TextBlock>
+        <TextBlock Height="73" HorizontalAlignment="Left" Margin="3,2,0,0" Name="textBox1" VerticalAlignment="Top" Width="268" Text="Help Page" FontSize="40" />
     </Grid>
     
 </Window>

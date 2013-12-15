@@ -7,7 +7,7 @@ Initial Screen
 The initial screen's purpose is to notify the users of the system that this is a touch based application and since a mouse is not provided. It is the only way the application receives input other than the keyboard.
 
 Main Screen
-The main page of the application has the following objects: search bar, home (Sport check) button, language button, help button, advertisement section, and browse/results section. Below is an explanation on what each button and sections’ role is.
+The main page of the application has the following objects: search bar, home (Sport check) button, language button, help button, advertisement section, and browse/results section. Below is an explanation on what each button and sections role is.
 
 Home (Sport Chek) Button
 This button resets the application to the default (initial) view. Search results will be discarded and browsing section will be restored to list all categories.
