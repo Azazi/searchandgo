@@ -92,7 +92,6 @@ C:\Users\Alaa\Documents\GitHub\CPSC-481\SearchAndGo\obj\Debug\SearchAndGo.pdb
 C:\Users\aselab\Developer\CPSC-481\SearchAndGo\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\aselab\Developer\CPSC-481\SearchAndGo\obj\Debug\Banner.baml
 C:\Users\aselab\Developer\CPSC-481\SearchAndGo\obj\Debug\FindAtOtherLocation.baml
-C:\Users\aselab\Developer\CPSC-481\SearchAndGo\obj\Debug\HelpPage.baml
 C:\Users\aselab\Developer\CPSC-481\SearchAndGo\obj\Debug\SearchResultItem2.baml
 C:\Users\aselab\Developer\CPSC-481\SearchAndGo\obj\Debug\FindInStoreWindow.baml
 C:\Users\aselab\Developer\CPSC-481\SearchAndGo\obj\Debug\ItemWindow.baml
@@ -102,7 +101,6 @@ C:\Users\aselab\Developer\CPSC-481\SearchAndGo\obj\Debug\WelcomeWindow.baml
 C:\Users\aselab\Developer\CPSC-481\SearchAndGo\obj\Debug\App.baml
 C:\Users\aselab\Developer\CPSC-481\SearchAndGo\obj\Debug\Banner.g.cs
 C:\Users\aselab\Developer\CPSC-481\SearchAndGo\obj\Debug\FindAtOtherLocation.g.cs
-C:\Users\aselab\Developer\CPSC-481\SearchAndGo\obj\Debug\HelpPage.g.cs
 C:\Users\aselab\Developer\CPSC-481\SearchAndGo\obj\Debug\SearchResultItem2.g.cs
 C:\Users\aselab\Developer\CPSC-481\SearchAndGo\obj\Debug\FindInStoreWindow.g.cs
 C:\Users\aselab\Developer\CPSC-481\SearchAndGo\obj\Debug\ItemWindow.g.cs
@@ -124,8 +122,6 @@ C:\Users\aselab\Developer\CPSC-481\SearchAndGo\bin\Debug\Transitionals.dll
 C:\Users\aselab\Developer\CPSC-481\SearchAndGo\bin\Debug\Microsoft.Expression.Drawing.xml
 C:\Users\aselab\Developer\CPSC-481\SearchAndGo\obj\Debug\SearchAndGo.exe
 C:\Users\aselab\Developer\CPSC-481\SearchAndGo\obj\Debug\SearchAndGo.pdb
-C:\Users\aselab\Developer\CPSC-481\SearchAndGo\obj\Debug\CategoryBrowser.baml
-C:\Users\aselab\Developer\CPSC-481\SearchAndGo\obj\Debug\CategoryBrowser.g.cs
 C:\Users\Alaa\Documents\GitHub\CPSC-481\SearchAndGo\obj\Debug\CategoryBrowser.baml
 C:\Users\Alaa\Documents\GitHub\CPSC-481\SearchAndGo\obj\Debug\CategoryBrowser.g.cs
 C:\Users\Alaa\Documents\GitHub\CPSC-481\SearchAndGo\obj\Debug\App.baml
@@ -166,3 +162,7 @@ C:\Users\Alaa\Documents\GitHub\CPSC-481\SearchAndGo\obj\Debug\App.baml
 \\cs-fs01\Profiles\ug\amazazi\Desktop\GitHub\CPSC-481\SearchAndGo\obj\Debug\GenerateResource.write.1.tlog
 \\cs-fs01\Profiles\ug\amazazi\Desktop\GitHub\CPSC-481\SearchAndGo\obj\Debug\SearchAndGo.exe
 \\cs-fs01\Profiles\ug\amazazi\Desktop\GitHub\CPSC-481\SearchAndGo\obj\Debug\SearchAndGo.pdb
+C:\Users\aselab\Developer\CPSC-481\SearchAndGo\obj\Debug\CategoryItem.baml
+C:\Users\aselab\Developer\CPSC-481\SearchAndGo\obj\Debug\HelpWindow.baml
+C:\Users\aselab\Developer\CPSC-481\SearchAndGo\obj\Debug\CategoryItem.g.cs
+C:\Users\aselab\Developer\CPSC-481\SearchAndGo\obj\Debug\HelpWindow.g.cs
