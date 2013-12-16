@@ -80,7 +80,7 @@ namespace SearchAndGo
 
         private void adsStackPanel_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
-            string message = "This should take you to special offer number " + currentAd.ToString();
+            string message = "This should take you to special offer number " + currentAd.ToString() + "\n Under Construction";
             MessageBox.Show(message, "Offer Clicked");
         }
 

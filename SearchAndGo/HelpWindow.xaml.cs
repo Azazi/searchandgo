@@ -39,7 +39,7 @@ namespace SearchAndGo
             HelpUserControl.Visibility = Visibility.Hidden;
         }
 
-        public string readFromFile(string path = @"../../../README.md")
+        public string readFromFile(string path = @"../../../Help")
         {
             string contentsOfFile = "";
             try

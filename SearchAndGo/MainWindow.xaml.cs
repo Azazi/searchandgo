@@ -152,7 +152,7 @@ namespace SearchAndGo
         {
             if (e.Key == Key.LWin || e.Key == Key.RWin) 
             {
-                MessageBox.Show("Windows button should be disabled so users can't exit the program!!!");
+                MessageBox.Show("Windows button should be disabled so users can't exit the program!!!" + "\n Under Construction");
             }
         }
 
